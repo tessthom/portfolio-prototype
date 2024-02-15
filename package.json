@@ -10,5 +10,10 @@
   },
   "devDependencies": {
     "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "open-props": "^1.6.18",
+    "postcss": "^8.4.35",
+    "postcss-jit-props": "^1.0.14"
   }
 }
