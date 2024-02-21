@@ -5,26 +5,139 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="nav-bar">
         <div class="logo-wrapper">
-          <img class="logo" src="#" alt="Tess Thomas logo" />
+          <a class="logo" href="./index.html">Tess Thomas</a>
         </div>
         <ul class="nav-list">
-          <li class="nav-item"><a href="#">Portfolio</a></li>
-          <li class="nav-item"><a href="#">Contact</a></li>
-          <li class="nav-item"><a href="#">Resume</a></li>
-          <li class="nav-item"><a href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h1>Tess Thomas</h1>
+      <article class="intro">
+        <h1>Creative web developer.</h1>
+        <div class="headshot-wrapper">
+          <img
+            class="headshot"
+            src="./public/assets/headshot-halftone-blue.png"
+            alt="Blue and white headshot of Tess" />
+        </div>
+        <div class="intro-text">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque
+            delectus deleniti illo quod dicta, consequuntur incidunt voluptate
+            iusto culpa, repellendus sapiente dolores quidem cum officia nemo,
+            cupiditate exercitationem magni.
+          </p>
+        </div>
+      </article>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="card">
+          <a href="">
+            <figure>
+              <img class="project-thumbnail" src="" alt="" />
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="">
+            <figure>
+              <img class="project-thumbnail" src="" alt="" />
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="">
+            <figure>
+              <img class="project-thumbnail" src="" alt="" />
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>THINGS I LOVE</h2>
+        <div class="details-wrapper">
+          <details>
+            <summary>NATIVE CSS</summary>
+            <p></p>
+          </details>
+          <details>
+            <summary>CRAFTSMANSHIP</summary>
+            <p></p>
+          </details>
+          <details>
+            <summary>MINIMALIST RESPONSIVE DESIGN</summary>
+            <p></p>
+          </details>
+          <details>
+            <summary>VANILLA JS, BABY</summary>
+            <p></p>
+          </details>
+          <details>
+            <summary>UTOPIAN DESIGN</summary>
+            <p></p>
+          </details>
+          <details>
+            <summary>BIAS LIGHTING</summary>
+            <p></p>
+          </details>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h3>Placeholder Text for Call to Action Circling Animated Cube</h3>
+          <div class="placeholder-circle"></div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <!-- TODO: Build Actual Email Form! -->
+      <form action="#">
+        <h2>Let's connect</h2>
+
+        <label for="name" class="visually-hidden">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" />
+
+        <label class="visually-hidden" for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" />
+
+        <label class="visually-hidden" for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"></textarea>
+      </form>
+      <section class="social-media"></section>
+
+      <div class="footer-fine-print">
+        <p>Designed & Built by Tess Thomas</p>
+        <small>Copyright 2024</small>
+      </div>
+    </footer>
 
     <!-- <div id="app"></div> -->
     <script type="module" src="/main.js"></script>
