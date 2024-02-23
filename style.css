@@ -1,5 +1,11 @@
 /* Custom variables */
 :root {
+  /* Custom Colors */
+  --cream: #F9F6EE;
+  --blue: #3C408E;
+  --red: #D7484B;
+  --yellow: #FCC419;
+  /* Numeric/Length Values */
   --sqrt2: 1.41421356; /* for use in calc() when adjusting hamburger menu button after it transforms into 'X' shape */
   --menu-btn-width: 3rem;
 }
@@ -78,7 +84,7 @@ article {
 /* General */
 body {
   min-height: 100vh;
-  background-color: var(--sand-0);
+  background-color: var(--cream);
   color: var(--blue-11);
   /* font-family: Inter, Helvetica, sans-serif; */
   font-family: var(--font-sans);
@@ -95,8 +101,12 @@ h6,
 .logo {
   /* font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif; */
   font-family: var(--font-serif);
-  font-weight: var(--font-weight-5);
+  /* font-weight: var(--font-weight-5); */
   letter-spacing: var(--font-letterspacing-0);
+}
+
+p {
+  text-wrap: balance;
 }
 
 /* Utility Classes */
@@ -111,12 +121,17 @@ h6,
   gap: var(--size-3);
 }
 
+.main-section-vert-padding {
+  padding-top: var(--size-8);
+  padding-bottom: var(--size-8);
+}
+
 /* Components */
 /* Navbar */
 .nav-bar {
-  /* border: 1px solid red; */
-  background-color: var(--sand-0);
   position: relative; /* create positioning context for the dropdown nav-list */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .logo-wrapper {
@@ -126,6 +141,7 @@ h6,
 
 .logo {
   font-size: var(--font-size-5);
+  font-weight: 100;
   /* height: 100%;
   display: flex;
   align-items: center; */
@@ -143,7 +159,7 @@ h6,
 /* Hamburger menu */
 .menu-button {
   background: none;
-  border: 1px solid deeppink;
+  border: none;
   position: relative;
   width: var(--menu-btn-width);
   height: var(--menu-btn-width);
@@ -180,9 +196,9 @@ h6,
 
 .nav-list {
   /* border: 1px dashed green; */
-  background-color: var(--sand-0);
+  background-color: var(--cream);
   margin: 0;
-  padding: var(--size-8) var(--size-3);
+  padding: var(--size-6) var(--size-3) var(--size-8);
   position: absolute;
   top: 100%;
   right: 0;
@@ -215,6 +231,16 @@ h6,
   margin-bottom: 0;
 }
 
+.nav-link {
+  cursor: pointer;
+  transition: font-weight 200ms ease, font-style 200ms ease;
+}
+
+.nav-link:active, .nav-link:hover {
+  font-weight: var(--font-weight-6);
+  font-style: italic;
+}
+
 /* Footer */
 /* Hide form labels so still readable for Accessibility */
 .visually-hidden {
@@ -227,19 +253,6 @@ h6,
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-/* EXPLANATION OF ABOVE CSS:
-position: absolute; - This takes the element out of the normal document flow, so it won't take up any space on the screen or push other elements around.
-
-width: 1px; height: 1px; - Sets the size too small to see.
-
-padding: 0; - Removes any padding around the element, which could increase its size.
-
-margin: -1px; - Pulls the element 1 pixel outside of its container, ensuring it's not visible even if the container has border or padding.
-
-overflow: hidden; - Prevents any content that extends beyond the 1 pixel by 1 pixel size from being visible.
-
-clip: rect(0,0,0,0); - Old method of clipping an element to a specific rectangle, in this case a 0 by 0 rectangle, effectively hiding it. For backwards compatibility.
-*/
 
 .footer-fine-print {
   display: flex;
@@ -251,7 +264,7 @@ clip: rect(0,0,0,0); - Old method of clipping an element to a specific rectangle
 
 /* Home */
 .home.grid {
-  gap: var(--size-5);
+  margin-top: var(--size-8);
   grid-auto-columns: 1fr;
   grid-template-areas:
     'intro'
@@ -263,11 +276,41 @@ clip: rect(0,0,0,0); - Old method of clipping an element to a specific rectangle
 /* Home - Intro */
 .intro {
   grid-area: intro;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  gap: var(--size-8); */
+}
+
+.intro-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-8);
+  width: min(400px, 80%);
+  margin: 0 auto;
+}
+
+.intro h1 {
+  text-align: left;
+  /* margin-right: auto; */
+  font-size: clamp(2.5rem, 14vw, 5.5rem);
+  font-weight: var(--font-weight-1);
+  /* font-style: italic; */
+  line-height: var(--font-lineheight-00);
+  letter-spacing: var(--font-letterspacing-0)
 }
 
 .headshot {
-  width: 50vw;
+  width: min(90%, 400px);
   border-radius: 50%;
+  margin: 0 auto;
+}
+
+.intro-text {
+  text-transform: uppercase;
+  font-size: var(--font-size-2);
+  line-height: var(--font-lineheight-2)
 }
 
 /* Home - Projects Section */
