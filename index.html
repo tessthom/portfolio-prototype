@@ -14,11 +14,15 @@
   </head>
   <body>
     <header>
-      <nav class="nav-bar">
-        <div class="logo-wrapper">
+      <nav class="nav-bar flex" role="navigation">
+        <div class="logo-wrapper flex">
           <a class="logo" href="./index.html">Tess Thomas</a>
         </div>
-        <ul class="nav-list">
+        <button class="menu-button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+        <ul id="nav-list" class="nav-list" hidden>
           <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
@@ -27,7 +31,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="grid home">
       <article class="intro">
         <h1>Creative web developer.</h1>
         <div class="headshot-wrapper">
@@ -46,7 +50,7 @@
         </div>
       </article>
 
-      <section>
+      <section class="projects">
         <h2>Projects</h2>
         <div class="card">
           <a href="">
@@ -76,7 +80,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="accordion">
         <h2>THINGS I LOVE</h2>
         <div class="details-wrapper">
           <details>
@@ -106,7 +110,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="cta">
         <div>
           <h3>Placeholder Text for Call to Action Circling Animated Cube</h3>
           <div class="placeholder-circle"></div>

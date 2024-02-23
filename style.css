@@ -69,7 +69,7 @@ article {
   border: 1px solid red;
 }
 
-/* Base styles - Mobile First */
+/* General */
 body {
   min-height: 100vh;
   background-color: var(--sand-0);
@@ -91,21 +91,36 @@ h6,
   letter-spacing: var(--font-letterspacing-0);
 }
 
+/* Utility Classes */
+/* TODO: Add helpful classes to add to HTML like `.grid-col-span-2 { span 2; }` */
+.grid {
+  display: grid;
+  place-content: center;
+}
+
+.flex {
+  display: flex;
+  gap: var(--size-3);
+}
+
+/* Components */
 /* Navbar */
 .nav-bar {
   border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
 }
 
-.nav-list {
-  border: 1px dashed green;
-  margin: 0;
-  padding: 0;
+.logo-wrapper {
+  margin-right: auto; /* easy sub instead of setting justify-content: space-between on the nav-bar flex container */
+  align-items: center;
 }
 
 .logo {
   font-size: var(--font-size-5);
+  /* height: 100%;
+  display: flex;
+  align-items: center; */
+  line-height: var(--font-lineheight-00);
+  padding-top: .17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. May be impossible w/ current CSS? */
 }
 
 .logo,
@@ -115,17 +130,47 @@ h6,
   color: var(--blue-11);
 }
 
-/* Intro */
-.headshot {
-  width: 50vw;
-  border-radius: 50%;
+/* Hamburger menu */
+.menu-button {
+  background: none;
+  border: 1px solid deeppink;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
 }
 
-/* Home - Projects Section */
+.line {
+  background: var(--blue-11);
+  height: 2px;
+  border-radius: var(--radius-1);
+  width: 100%;
+  position: absolute;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
 
-/* Home - Accordion Section */
+.line:first-child {
+  top: 40%;
+}
 
-/* Home - CTA Section */
+.line:last-child {
+  bottom: 40%;
+}
+
+.menu-button[aria-expanded="true"] .line:first-child {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.menu-button[aria-expanded="true"] .line:last-child {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.nav-list {
+  border: 1px dashed green;
+  margin: 0;
+  padding: 0;
+}
 
 /* Footer */
 /* Hide form labels so still readable for Accessibility */
@@ -159,6 +204,58 @@ clip: rect(0,0,0,0); - Old method of clipping an element to a specific rectangle
   align-items: center;
 }
 
+/* Page-specific Styles */
+
+/* Home */
+.home.grid {
+  gap: var(--size-5);
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'intro'
+    'projects'
+    'accordion'
+    'cta';
+}
+
+/* Home - Intro */
+.intro {
+  grid-area: intro;
+}
+
+.headshot {
+  width: 50vw;
+  border-radius: 50%;
+}
+
+/* Home - Projects Section */
+.projects {
+  grid-area: projects;
+}
+
+/* Home - Accordion Section */
+.accordion {
+  grid-area: accordion;
+}
+
+/* Home - CTA Section */
+.cta {
+  grid-area: cta;
+}
+
+/* Tablet+ Styles */
+@media (min-width: 768px) {
+  /* Change Navbar */
+  #menu-button {
+    display: none; /* hide hamburger button */
+  }
+
+  .nav-list {
+    display: flex; /* display nav list as flex row */
+    gap: var(--size-3);
+    align-items: center;
+  }
+}
+
 /* TODO: 
    - Make headshot less wide on larger screens if still using vw on mobile
    - Sort out contact pseudo-form. No backend for Midterm. Create actual form for final? 
@@ -167,6 +264,24 @@ clip: rect(0,0,0,0); - Old method of clipping an element to a specific rectangle
 
 /* PROPERTIES TO REMEMBER TO LEVERAGE IF APPROPRIATE: 
  place-content: center; // shorthand for align-content | justify-content, used in flexbox & grid. Can spec just 1 value to appy to both align-content and justify-content.
+
+ // This is a great way to give your main content area a "margin" on smaller screen sizes (`100% - 2rem` means 1rem on each side), and a max-width of 50rem or whatever on larger screens. `margin-inline: auto` is a shorthand way of saying `margin-left: auto; margin-right: auto;`.
+ .content-container {
+  width: min(100% - 2rem, 50rem [or 800px]);
+  margin-inline: auto;
+ }
+
+ // Change OP to custom properties, and have them be dependent on user's dark or light mode preference 
+ :root {
+  --brand: var(--blue-10)
+ }
+
+ @media (prefers-color-scheme: dark) {
+  :root {
+    --brand: var(--[whatever-cream-color]);
+  }
+}
+
 */
 
 /* :root {
