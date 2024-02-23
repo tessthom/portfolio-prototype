@@ -157,7 +157,7 @@ h6,
   border-radius: var(--radius-1);
   width: 100%;
   position: absolute;
-  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+  transition: transform 0.5s ease, top 0.5s ease, bottom 0.5s ease;
 }
 
 .line:first-child {
@@ -168,18 +168,13 @@ h6,
   bottom: 40%;
 }
 
-/* Shift the menu button rightward to maintain vertical alignment with the list items below it by subtracting the width of the button from the result of the square's diagonal measurement. At 3rem the calculated width is 0.62rem, for example. */
-.menu-button[aria-expanded="true"] {
-  transform: translateX(calc((var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width))/ 2));
-}
-
 .menu-button[aria-expanded="true"] .line:first-child {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
 
 .menu-button[aria-expanded="true"] .line:last-child {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   bottom: calc(50% - 1px);
 }
 
@@ -207,6 +202,8 @@ h6,
   font-size: var(--font-size-3);
   margin-bottom: var(--size-8);
   opacity: 0;
+  /* Find the difference between the hamburger button's diagonal length and the button's width. Use half of that value to bump the dropdown list leftward, so that it maintains alignment with the hamburger button when it's in an 'X' shape. This feels less distracting than translating the button itself rightward on transform. */
+  padding-right: calc((var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width)) / 2);
 }
 
 .nav-list.show .nav-item {
