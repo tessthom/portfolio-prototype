@@ -1,3 +1,9 @@
+/* Custom variables */
+:root {
+  --sqrt2: 1.41421356; /* for use in calc() when adjusting hamburger menu button after it transforms into 'X' shape */
+  --menu-btn-width: 3rem;
+}
+
 /* Box sizing */
 *,
 *::before,
@@ -76,6 +82,8 @@ body {
   color: var(--blue-11);
   /* font-family: Inter, Helvetica, sans-serif; */
   font-family: var(--font-sans);
+  width: min(100% - 2rem, 50rem); /* 1rem margin @ left and right on smaller screens */
+  margin-inline: auto; /* horizontally center body based on above */
 }
 
 h1,
@@ -106,7 +114,9 @@ h6,
 /* Components */
 /* Navbar */
 .nav-bar {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background-color: var(--sand-0);
+  position: relative; /* create positioning context for the dropdown nav-list */
 }
 
 .logo-wrapper {
@@ -125,7 +135,7 @@ h6,
 
 .logo,
 .nav-link {
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   text-decoration: none;
   color: var(--blue-11);
 }
@@ -135,8 +145,10 @@ h6,
   background: none;
   border: 1px solid deeppink;
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: var(--menu-btn-width);
+  height: var(--menu-btn-width);
+  margin-right: var(--size-3); /* GET RID OF THIS AND JUST PUT MARGIN AROUND ALL CONTENT? */
+  transition: transform 0.3s ease-in-out;
 }
 
 .line {
@@ -156,20 +168,54 @@ h6,
   bottom: 40%;
 }
 
+/* Shift the menu button rightward to maintain vertical alignment with the list items below it by subtracting the width of the button from the result of the square's diagonal measurement. At 3rem the calculated width is 0.62rem, for example. */
+.menu-button[aria-expanded="true"] {
+  transform: translateX(calc((var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width))/ 2));
+}
+
 .menu-button[aria-expanded="true"] .line:first-child {
   transform: rotate(45deg);
-  top: 50%;
+  top: calc(50% - 1px);
 }
 
 .menu-button[aria-expanded="true"] .line:last-child {
   transform: rotate(-45deg);
-  bottom: 50%;
+  bottom: calc(50% - 1px);
 }
 
 .nav-list {
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
+  background-color: var(--sand-0);
   margin: 0;
-  padding: 0;
+  padding: var(--size-8) var(--size-3);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  text-align: end;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+.nav-list.show {
+  transform: scale(1, 1);
+}
+
+.nav-item {
+  width: 100%;
+  font-size: var(--font-size-3);
+  margin-bottom: var(--size-8);
+  opacity: 0;
+}
+
+.nav-list.show .nav-item {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out 250ms;
+}
+
+.nav-item:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Footer */
