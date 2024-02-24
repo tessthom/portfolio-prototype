@@ -1,10 +1,10 @@
 /* Custom variables */
 :root {
   /* Custom Colors */
-  --cream: #F9F6EE;
-  --blue: #3C408E;
-  --red: #D7484B;
-  --yellow: #FCC419;
+  --cream: #f9f6ee;
+  --blue: #3c408e;
+  --red: #d7484b;
+  --yellow: #fcc419;
   /* Numeric/Length Values */
   --sqrt2: 1.41421356; /* for use in calc() when adjusting hamburger menu button after it transforms into 'X' shape */
   --menu-btn-width: 3rem;
@@ -88,7 +88,10 @@ body {
   color: var(--blue-11);
   /* font-family: Inter, Helvetica, sans-serif; */
   font-family: var(--font-sans);
-  width: min(100% - 2rem, 50rem); /* 1rem margin @ left and right on smaller screens */
+  width: min(
+    100% - 2rem,
+    50rem
+  ); /* 1rem margin @ left and right on smaller screens */
   margin-inline: auto; /* horizontally center body based on above */
 }
 
@@ -146,7 +149,7 @@ p {
   display: flex;
   align-items: center; */
   line-height: var(--font-lineheight-00);
-  padding-top: .17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. May be impossible w/ current CSS? */
+  padding-top: 0.17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. May be impossible w/ current CSS? */
 }
 
 .logo,
@@ -163,7 +166,9 @@ p {
   position: relative;
   width: var(--menu-btn-width);
   height: var(--menu-btn-width);
-  margin-right: var(--size-3); /* GET RID OF THIS AND JUST PUT MARGIN AROUND ALL CONTENT? */
+  margin-right: var(
+    --size-3
+  ); /* GET RID OF THIS AND JUST PUT MARGIN AROUND ALL CONTENT? */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -184,21 +189,18 @@ p {
   bottom: 40%;
 }
 
-.menu-button[aria-expanded="true"] .line:first-child {
+.menu-button[aria-expanded='true'] .line:first-child {
   transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
 
-.menu-button[aria-expanded="true"] .line:last-child {
+.menu-button[aria-expanded='true'] .line:last-child {
   transform: rotate(45deg);
   bottom: calc(50% - 1px);
 }
 
 .nav-list {
-  /* border: 1px dashed green; */
-  background-color: var(--cream);
   margin: 0;
-  padding: var(--size-6) var(--size-3) var(--size-8);
   position: absolute;
   top: 100%;
   right: 0;
@@ -211,15 +213,15 @@ p {
 
 .nav-list.show {
   transform: scale(1, 1);
+  background-color: var(--cream);
+  z-index: 2;
 }
 
 .nav-item {
   width: 100%;
   font-size: var(--font-size-3);
-  margin-bottom: var(--size-8);
   opacity: 0;
-  /* Find the difference between the hamburger button's diagonal length and the button's width. Use half of that value to bump the dropdown list leftward, so that it maintains alignment with the hamburger button when it's in an 'X' shape. This feels less distracting than translating the button itself rightward on transform. */
-  padding-right: calc((var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width)) / 2);
+  padding-right: var(--size-3);
 }
 
 .nav-list.show .nav-item {
@@ -227,16 +229,25 @@ p {
   transition: opacity 200ms ease-in-out 250ms;
 }
 
-.nav-item:last-of-type {
-  margin-bottom: 0;
+.nav-item:last-child {
+  padding-bottom: var(--size-3);
 }
 
 .nav-link {
+  display: inline-block;
+  width: 100%;
+  padding-top: var(--size-6);
+  padding-bottom: var(--size-6);
+  /* Find difference between nav button's diagonal and its width. Use 0.5 of that value to bump links leftward to maintain alignment with the button when it's in an 'X' shape. Less awkard than translating the button itself rightward on transform. */
+  padding-right: calc(
+    (var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width)) / 2
+  );
   cursor: pointer;
   transition: font-weight 200ms ease, font-style 200ms ease;
 }
 
-.nav-link:active, .nav-link:hover {
+.nav-link:active,
+.nav-link:hover {
   font-weight: var(--font-weight-6);
   font-style: italic;
 }
@@ -298,7 +309,7 @@ p {
   font-weight: var(--font-weight-1);
   /* font-style: italic; */
   line-height: var(--font-lineheight-00);
-  letter-spacing: var(--font-letterspacing-0)
+  letter-spacing: var(--font-letterspacing-0);
 }
 
 .headshot {
@@ -310,7 +321,25 @@ p {
 .intro-text {
   text-transform: uppercase;
   font-size: var(--font-size-2);
-  line-height: var(--font-lineheight-2)
+  line-height: var(--font-lineheight-2);
+}
+
+.intro-heading-svg-wrapper {
+  position: relative;
+  border: 1px solid green;
+}
+
+svg.squiggle {
+  position: absolute;
+  top: 95%;
+  left: 64%;
+  width: 35%;
+  z-index: 1;
+}
+
+svg.squiggle path {
+  stroke: var(--red);
+  stroke-width: 3px;
 }
 
 /* Home - Projects Section */
