@@ -78,7 +78,7 @@ select {
 /* DEV VISUAL AID - DELETE WHEN LAYOUT COMPLETE */
 section,
 article {
-  border: 1px solid red;
+  /* border-top: 1px solid red; */
 }
 
 /* General */
@@ -88,7 +88,7 @@ body {
   color: var(--blue-11);
   /* font-family: Inter, Helvetica, sans-serif; */
   font-family: var(--font-sans);
-  width: min(
+  /*width: min(
     100% - 2rem,
     50rem
   ); /* 1rem margin @ left and right on smaller screens */
@@ -131,6 +131,10 @@ p {
 
 /* Components */
 /* Navbar */
+.header {
+  padding: var(--size-4) var(--size-4) 0;
+}
+
 .nav-bar {
   position: relative; /* create positioning context for the dropdown nav-list */
   padding-top: 1rem;
@@ -145,16 +149,12 @@ p {
 .logo {
   font-size: var(--font-size-5);
   font-weight: 100;
-  /* height: 100%;
-  display: flex;
-  align-items: center; */
   line-height: var(--font-lineheight-00);
   padding-top: 0.17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. May be impossible w/ current CSS? */
 }
 
 .logo,
 .nav-link {
-  /* border: 1px dotted red; */
   text-decoration: none;
   color: var(--blue-11);
 }
@@ -166,9 +166,6 @@ p {
   position: relative;
   width: var(--menu-btn-width);
   height: var(--menu-btn-width);
-  margin-right: var(
-    --size-3
-  ); /* GET RID OF THIS AND JUST PUT MARGIN AROUND ALL CONTENT? */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -254,6 +251,43 @@ p {
 
 /* Footer */
 /* Hide form labels so still readable for Accessibility */
+.footer {
+  padding: var(--size-4);
+  background-color: var(--blue);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form {
+  border: 1px solid red;
+}
+
+.footer-social-wrapper {
+  border: 1px solid red;
+}
+
+.footer-social-link-item {
+  display: inline-block;
+}
+
+.footer-social-button {
+  border: 1px solid var(--cream);
+  /* TODO: CHANGE ABOVE VAR TO HSLA TO BE LESS OPAQUE */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.footer-social-svg {
+  position: absolute;
+  display: inline-block;
+  max-width: 100%;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -266,6 +300,7 @@ p {
 }
 
 .footer-fine-print {
+  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -275,7 +310,7 @@ p {
 
 /* Home */
 .home.grid {
-  margin-top: var(--size-8);
+  /* margin-top: var(--size-8); */
   grid-auto-columns: 1fr;
   grid-template-areas:
     'intro'
@@ -288,9 +323,7 @@ p {
 .intro {
   grid-area: intro;
   text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  gap: var(--size-8); */
+  padding: var(--size-4);
 }
 
 .intro-content-wrapper {
@@ -304,10 +337,8 @@ p {
 
 .intro h1 {
   text-align: left;
-  /* margin-right: auto; */
   font-size: clamp(2.5rem, 14vw, 5.5rem);
   font-weight: var(--font-weight-1);
-  /* font-style: italic; */
   line-height: var(--font-lineheight-00);
   letter-spacing: var(--font-letterspacing-0);
 }
@@ -326,7 +357,6 @@ p {
 
 .intro-heading-svg-wrapper {
   position: relative;
-  border: 1px solid green;
 }
 
 svg.squiggle {
@@ -345,11 +375,73 @@ svg.squiggle path {
 /* Home - Projects Section */
 .projects {
   grid-area: projects;
+  padding: var(--size-4);
 }
 
 /* Home - Accordion Section */
 .accordion {
   grid-area: accordion;
+  padding: var(--size-9) var(--size-4);
+  background-color: var(--blue);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion h2 {
+  line-height: var(--font-lineheight-00);
+  text-align: center;
+  font-size: clamp(1.5rem, 10vw, 3.5rem);
+  font-weight: var(--font-weight-1);
+  font-style: italic;
+}
+
+.details-wrapper {
+  width: min(400px, 100%);
+}
+
+.details-item {
+  padding: var(--size-6) 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: var(--font-size-3);
+}
+
+.summary {
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-item:first-of-type .summary {
+  border-top: 1px solid var(--cream);
+  padding-top: var(--size-6);
+}
+
+.summary:hover {
+  font-weight: var(--font-weight-6);
+}
+
+.plus-sign {
+  width: 1.5em;
+}
+
+.summary-content {
+  padding-top: var(--size-3);
+  font-weight: var(--font-weight-3);
+  letter-spacing: var(--font-letterspacing-1);
+  line-height: var(--font-lineheight-2);
+}
+
+.summary-content a {
+  color: var(--cream);
+}
+
+.summary-content a:hover {
+  font-style: italic;
 }
 
 /* Home - CTA Section */
