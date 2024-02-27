@@ -252,7 +252,7 @@ p {
 /* Footer */
 /* Hide form labels so still readable for Accessibility */
 .footer {
-  padding: var(--size-4);
+  padding: var(--size-6) var(--size-4) var(--size-8);
   background-color: var(--blue);
   color: var(--cream);
   display: flex;
@@ -260,12 +260,40 @@ p {
   align-items: center;
 }
 
+.footer h3 {
+  font-size: var(--font-size-7);
+  font-weight: var(--font-weight-1);
+  font-style: italic;
+  line-height: var(--font-lineheight-00);
+  padding: var(--size-3) 0;
+}
+
 .contact-form {
-  border: 1px solid red;
+  width: min(420px, 100%);
+}
+
+.footer input, .footer textarea, .footer-button-submit {
+  width: 100%;
+  margin-bottom: var(--size-6);
+  padding: .5em;
+  color: var(--blue);
+  font-size: var(--font-size-1);
+}
+
+.footer-button-submit {
+  margin-bottom: 0;
+  background-color: var(--blue);
+  color: var(--cream);
+  text-decoration: none;
+  border: 2px solid var(--cream);
+  font-size: var(--font-size-3);
 }
 
 .footer-social-wrapper {
-  border: 1px solid red;
+  width: min(400px, 100%);
+  padding: var(--size-8) 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-social-link-item {
@@ -275,17 +303,18 @@ p {
 .footer-social-button {
   border: 1px solid var(--cream);
   /* TODO: CHANGE ABOVE VAR TO HSLA TO BE LESS OPAQUE */
+  cursor: pointer;
+  width: min(10vw, 3rem);
+  height: min(10vw, 3rem);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .footer-social-svg {
-  position: absolute;
   display: inline-block;
-  max-width: 100%;
+  max-width: 60%;
 }
 
 .visually-hidden {
@@ -300,10 +329,15 @@ p {
 }
 
 .footer-fine-print {
-  border: 1px solid red;
+  width: min(400px, 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.footer-fine-print p {
+  font-family: var(--font-serif);
+  font-style: italic;
 }
 
 /* Page-specific Styles */
