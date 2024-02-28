@@ -16,7 +16,7 @@
     <header class="header">
       <nav class="nav-bar flex" role="navigation">
         <div class="logo-wrapper flex">
-          <a class="logo" href="../index.html">Tess Thomas</a>
+          <a class="logo" href="%BASE_URL%index.html">Tess Thomas</a>
         </div>
         <button
           class="menu-button"
@@ -28,10 +28,12 @@
         </button>
         <ul id="nav-list" class="nav-list">
           <li class="nav-item">
-            <a class="nav-link" href="./pages/portfolio.html">Portfolio</a>
+            <a class="nav-link" href="%BASE_URL%pages/portfolio.html"
+              >Portfolio</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact</a>
+            <a class="nav-link" href="%BASE_URL%pages/about.html">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Resume</a>
@@ -42,8 +44,16 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="resume">
       <h1>Resume</h1>
+      <div class="embed-container">
+        <embed
+          class="resume-embed"
+          src="%BASE_URL%assets/tess-thomas-resume.pdf"
+          type="application/pdf"
+          width="100%"
+          height="auto" />
+      </div>
     </main>
 
     <footer class="footer main-section-vert-padding">
@@ -73,7 +83,7 @@
           <div class="footer-social-button">
             <img
               class="footer-social-svg"
-              src="./public/assets/github-logo.svg"
+              src="../public/assets/github-logo.svg"
               alt="github" />
           </div>
         </a>
@@ -82,7 +92,7 @@
           <div class="footer-social-button">
             <img
               class="footer-social-svg"
-              src="./public/assets/codepen-logo.svg"
+              src="../public/assets/codepen-logo.svg"
               alt="codepen" />
           </div>
         </a>
@@ -91,7 +101,7 @@
           <div class="footer-social-button">
             <img
               class="footer-social-svg"
-              src="./public/assets/instagram-logo.svg"
+              src="../public/assets/instagram-logo.svg"
               alt="instagram" />
           </div>
         </a>
