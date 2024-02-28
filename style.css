@@ -84,12 +84,6 @@ select {
   }
 }
 
-/* DEV VISUAL AID - DELETE WHEN LAYOUT COMPLETE */
-section,
-article {
-  /* border-top: 1px solid red; */
-}
-
 /* General */
 body {
   min-height: 100vh;
@@ -113,7 +107,6 @@ h6,
 .logo {
   /* font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif; */
   font-family: var(--font-serif);
-  /* font-weight: var(--font-weight-5); */
   letter-spacing: var(--font-letterspacing-0);
 }
 
@@ -492,6 +485,8 @@ svg.squiggle path {
 
 .project-thumbnail {
   margin-bottom: var(--size-8);
+  width: 100%;
+  height: auto;
 }
 
 /* Home - Accordion Section */
@@ -570,17 +565,22 @@ svg.squiggle path {
   }
 }
 
-@keyframes float {
+@keyframes float-cube {
   50% { transform: translateY(-25%); }
+}
+
+/* push down an extra 35% to neutralize float animation bobbing shadow up and down */
+@keyframes shrink-shadow {
+  50% { bottom: -115%; width: 100%; height: 100%; }
 }
 
 .cta {
   grid-area: cta;
-  padding: var(--size-9) var(--size-4);
+  padding: var(--size-10) var(--size-4);
 }
 
 .cta-wrapper {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0 auto;
   width: 90%;
   position: relative;
@@ -596,60 +596,80 @@ svg.squiggle path {
 }
 
 .cube-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   position: absolute;
   top: 35%;
   left: 35%;
   width: 30%;
   height: 30%;
   perspective: 500px;
-  animation: float 3s var(--ease-in-out-3) 3;
+  animation: float-cube 3s var(--ease-in-out-3) 3;
 }
 
 .cube {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotate3d(-0.5, -1, 0.15, 45deg);
+  transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(18%);
+}
+
+.cube::after {
+  content: "";
+  position: absolute;
+  bottom: -80%;
+  background: rgba(43, 42, 42, .75);
+  width: 105%;
+  height: 110%;
+  border-radius: 40%;
+  filter: blur(10px);
+  transform: rotateX(90deg);
+  animation: shrink-shadow 3s var(--ease-in-out-3) 3;
 }
 
 .face {
   width: 100%;
   height: 100%;
-  background: var(--pink-3);
-  border: 2px solid var(--blue);
+  padding: 20%;
+  /* background: var(--blue); */
+  /* border: 2px solid var(--blue); */
   position: absolute;
-  opacity: 0.5;
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-4);
 }
 
-.front {
+.face.front {
   transform: translateZ(50px);
+  background-color: hsla(237, 41%, 35%, 1);
+  /* background-color: hsl(359, 64%, 35%); */
 }
 
-.back {
-  transform: translateZ(-50px) rotateY(180deg);
+.face.back {
+  transform: translateZ(-49px) rotateY(180deg);
 }
 
-.left {
-  transform: translateX(-50px) rotateY(-90deg);
+.face.left {
+  transform: translateX(-49px) rotateY(-90deg);
 }
 
-.right {
+.face.right {
   transform: translateX(50px) rotateY(90deg);
+  background-color: hsl(237, 41%, 55%);
+  /* background-color: hsl(359, 64%, 55%); */
 }
 
-.top {
+.face.top {
   transform: translateY(-50px) rotateX(90deg);
+  background-color: hsl(237, 41%, 70%);
+  /* background-color: hsl(359, 64%, 70%); */
 }
 
-.bottom {
-  transform: translateY(50px) rotateX(-90deg);
+.face.bottom {
+  transform: translateY(49px) rotateX(-90deg);
 }
 
 /* Tablet+ Styles */
