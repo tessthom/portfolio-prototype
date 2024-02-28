@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="./assets/favicon.jpg" />
+    <link rel="icon" type="image" href="../assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,8 +42,247 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <h1>Portfolio</h1>
+
+    <main class="grid portfolio">
+      <div class="h1-container">
+        <h1 class="portfolio-h1">Portfolio</h1>
+      </div>
+
+      <section class="project-section project-one">
+        <div class="project-intro">
+          <h2 class="project-heading">
+            Destination Marketing Visitor's Site Redesign
+          </h2>
+          <img
+            class="project-main-img"
+            src="../public/assets/topsail-home-mobile-800.png"
+            alt="home page of destination marketing site" />
+          <p class="project-summary">
+            A 90's magazine ad-inspired full redesign and partial content
+            refresh for a small North Carolina beach town's visitor information
+            website.
+          </p>
+        </div>
+
+        <div class="role-skill-url-container">
+          <div class="role-container">
+            <h3 class="role-h3">Role</h3>
+            <p class="roles">Web Designer, Copywriter, Front-end Developer</p>
+          </div>
+
+          <div class="project-responsibilities">
+            <h3>Responsibilities</h3>
+            <p>
+              Figma, Branding, Mobile-first design, Bootstrap, Custom CSS,
+              Vanilla JavaScript, Animation
+            </p>
+          </div>
+
+          <div class="url">
+            <h3>URL</h3>
+            <a
+              class="project-link-item"
+              href="https://tessthom.github.io/topsail-v2/index.html"
+              target="_blank"
+              >https://tessthom.github.io/topsail</a
+            >
+          </div>
+        </div>
+
+        <!-- <div class="project-img-2">
+          <img
+            src="../public/assets/topsail-activities-lg-1500.png"
+            alt="Copyright and fluid layout of beach town activities page" />
+          <p>
+            This project was Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Explicabo repellendus repellat libero esse rerum commodi
+            fugiat praesentium, illum error? Eveniet molestiae dolores quisquam
+            aliquid rerum cupiditate perspiciatis impedit ipsa eum!
+          </p>
+        </div>
+
+        <div class="project-img-3">
+          <img
+            src="../public/assets/topsail-home-scrollbtn-800.png"
+            alt="snip of beach town website scroll-to-top button" />
+          <p>
+            I learned a lot about scroll effects and performance considerations
+            with this site. I was just getting into DOM manipulation and wanted
+            to implement as much of my vision as possible with client-side JS.
+            Wiring up this section of images on the home page to translate
+            horizontally based on scroll position was a great little exercise
+            in... Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Soluta corporis iusto architecto dolor.
+          </p>
+        </div>
+
+        <div class="project-cta">
+          <h4>Check it out.</h4>
+          <div class="project-cta-btn">
+            <a
+              href="https://tessthom.github.io/topsail-v2/index.html"
+              target="_blank"
+              >Topsail Beach</a
+            >
+          </div>
+        </div> -->
+      </section>
+
+      <section class="project-section project-two">
+        <div class="project-intro">
+          <h2 class="project-heading">ASP.NET Core MVC Tutorial App</h2>
+          <img
+            class="project-main-img"
+            src="../public/assets/dotnet-home-snip-1400.png"
+            alt="home page of ASP.NET core MVC app" />
+          <p class="project-summary">
+            A full-stack ASP.NET Core tutorial app, built to practice my .NET
+            and MVC architecture skills. With razor layouts, defined areas and
+            dynamic routing, this project was an exciting challenge after
+            focusing predominately on React and Vanilla JavaScript builds.
+          </p>
+        </div>
+
+        <div class="role-skill-url-container">
+          <div class="role">
+            <h3>Role</h3>
+            <p>Web Designer, Copywriter, Full-stack Developer</p>
+          </div>
+          <div class="project-responsibilities">
+            <h3>Skills</h3>
+            <p>
+              ASP.NET Core, C#, Dynamic routing, Razor Views, Areas with nested
+              layouts, Custom CSS & Bootstrap, Client-side dynamic search
+              auto-complete script.
+            </p>
+          </div>
+
+          <div class="url">
+            <h3>URL</h3>
+            <a
+              href="https://github.com/tessthom/tess_thomas_dotnetapp"
+              target="_blank"
+              >https://github.com/tessthom/dotnetapp</a
+            >
+          </div>
+        </div>
+
+        <!-- <div class="project-img-2">
+          <img
+            src="../public/assets/dotnet-main-content-btm-1400.png"
+            alt="Snip of dot net app footer" />
+          <p>
+            This project was Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Explicabo repellendus repellat libero esse rerum commodi
+            fugiat praesentium, illum error? Eveniet molestiae dolores quisquam
+            aliquid rerum cupiditate perspiciatis impedit ipsa eum!
+          </p>
+        </div>
+        <div class="project-img-3">
+          <img
+            src="../public/assets/dotnet-tutorial-CRUD-1400.png"
+            alt="snip of beach town website scroll-to-top button" />
+          <p>
+            I happened to start this project just as Microsoft announced it
+            would be discontinuing Visual Studio for Mac. I'd worked in VS for
+            Windows quite a bit when I first began learning about programming,
+            building small C# console apps to practice control structures. I
+            used an older Macbook, running Windows 10 through Parallels in order
+            to work with VS and XAMPP, which were required for a few of my early
+            courses. Then I got a new M2 machine and embraced the challenge of
+            configuring Visual Studio for Mac to build PHP projects for a new
+            class.
+          </p>
+          <img src="../public/assets/dotnet-timeline-1400.png" alt="" />
+          <p>
+            The plan was to use it for .NET too, and then boom, no more Visual
+            Studio for Mac. As a front-end focused student I admittedly prefer
+            VS Code, but had never used it for a C# project before. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Id minus rem aliquid...
+          </p>
+        </div>
+        <div class="project-cta">
+          <h4>Check it out.</h4>
+          <div class="project-cta-btn">
+            <a
+              href="https://github.com/tessthom/tess_thomas_dotnetapp"
+              target="_blank"
+              >.NET App repo</a
+            >
+          </div>
+        </div> -->
+      </section>
+
+      <section class="project-section project-three">
+        <div class="project-intro">
+          <h2 class="project-heading">Super Juice Recipe Calculator</h2>
+          <img class="project-main-img"
+            src="../public/assets/superjuice-home-mobile-800.png"
+            alt="home page of destination marketing site" />
+          <p class="project-summary">
+            A mobile-first, dynamic recipe calculator app for an innovative
+            bartending product that exponentially reduces citrus waste and
+            creates a nearly shelf-stable product, without losing out on flavor.
+            Being a relatively new invention, it can be hard to find an
+            authoritative recipe for Super Juice, let alone a calculator. So I
+            made one.
+          </p>
+        </div>
+
+        <div class="role-skill-url-container">
+          <div class="role">
+            <h3>Role</h3>
+            <p>Web Designer, Copywriter, Front-end Developer</p>
+          </div>
+          <div class="project-responsibilities">
+            <h3>Skills</h3>
+            <p>Figma logo and illustration design, CSS Grid for Mobile-first design, Dynamic input controls with vanilla JavaScript</p>
+          </div>
+          <div class="url">
+            <h3>URL</h3>
+            <div>
+              <a
+                href="https://tessthom.github.io/super-juice-calculator/"
+                target="_blank"
+                >https://tessthom.github.io/super-juice</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="project-img-2">
+          <img
+            src="../public/assets/superjuice-calc-mobile-800.png"
+            alt="Calculator for superjuice" />
+          <p>
+            This project was Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Explicabo repellendus repellat libero esse rerum commodi
+            fugiat praesentium, illum error? Eveniet molestiae dolores quisquam
+            aliquid rerum cupiditate perspiciatis impedit ipsa eum!
+          </p>
+        </div>
+        <div class="project-img-3">
+          <img
+            src="../public/assets/superjuice-recipe-mobile.png"
+            alt="Super juice recipe output" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+            labore illo molestiae quod at, sed et nulla voluptate ducimus fugiat
+            repellat ipsum quasi nostrum, repudiandae quis cumque vitae
+            laudantium excepturi.
+          </p>
+        </div>
+        <div class="project-cta">
+          <h4>Check it out.</h4>
+          <div class="project-cta-btn">
+            <a
+              href="https://tessthom.github.io/super-juice-calculator"
+              target="_blank"
+              >Super Juice Calculator</a
+            >
+          </div>
+        </div> -->
+      </section>
     </main>
 
     <footer class="footer main-section-vert-padding">
