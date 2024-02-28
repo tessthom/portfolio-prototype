@@ -2,13 +2,119 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../vite.svg" />
+    <link rel="icon" type="image" href="./assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
+    <title>Tess Thomas | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <h1>Resume</h1>
+    <header class="header">
+      <nav class="nav-bar flex" role="navigation">
+        <div class="logo-wrapper flex">
+          <a class="logo" href="../index.html">Tess Thomas</a>
+        </div>
+        <button
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="nav-list"
+          aria-label="Menu">
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://tessthos.wordpress.com/">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Resume</h1>
+    </main>
+
+    <footer class="footer main-section-vert-padding">
+      <!-- TODO: Build Actual Email Form! -->
+      <form class="contact-form" action="#">
+        <h3>Let's work<br />together</h3>
+
+        <label for="name" class="visually-hidden">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" />
+
+        <label class="visually-hidden" for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" />
+
+        <label class="visually-hidden" for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Message"></textarea>
+
+        <button
+          class="footer-button-submit"
+          type="button"
+          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)">
+          Contact
+        </button>
+      </form>
+
+      <section class="footer-social-wrapper">
+        <a class="footer-social-link-item" href="https://github.com/tessthom">
+          <div class="footer-social-button">
+            <img
+              class="footer-social-svg"
+              src="./public/assets/github-logo.svg"
+              alt="github" />
+          </div>
+        </a>
+
+        <a class="footer-social-link-item" href="https://codepen.io/">
+          <div class="footer-social-button">
+            <img
+              class="footer-social-svg"
+              src="./public/assets/codepen-logo.svg"
+              alt="codepen" />
+          </div>
+        </a>
+
+        <a class="footer-social-link-item" href="">
+          <div class="footer-social-button">
+            <img
+              class="footer-social-svg"
+              src="./public/assets/instagram-logo.svg"
+              alt="instagram" />
+          </div>
+        </a>
+
+        <a
+          class="footer-social-link-item"
+          href="https://www.linkedin.com/in/tess-thomas-dev/">
+          <div class="footer-social-button">
+            <img
+              class="footer-social-svg"
+              src="../public/assets/linkedin-logo.svg"
+              alt="linkedin" />
+          </div>
+        </a>
+      </section>
+
+      <div class="footer-fine-print">
+        <p>Designed & Built by Tess Thomas</p>
+        <small>Copyright 2024</small>
+      </div>
+    </footer>
+
+    <script type="module" src="../main.js"></script>
     <script type="module" src="../js/resume.js"></script>
   </body>
 </html>

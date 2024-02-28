@@ -556,6 +556,9 @@ svg.squiggle path {
 }
 
 /* Home - CTA Section */
+/* TODO: Leverage JS Intersection Observer API to only run these when elements come into view */
+
+/* Animations for CTA */
 @keyframes rotate-circle {
   from {
     transform: rotate(0deg);
@@ -603,7 +606,7 @@ svg.squiggle path {
   width: 30%;
   height: 30%;
   perspective: 500px;
-  animation: float-cube 3s var(--ease-in-out-3) 3;
+  animation: float-cube 3s var(--ease-in-out-3) 5;
 }
 
 .cube {
