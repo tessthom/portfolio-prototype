@@ -72,30 +72,49 @@
       </article>
 
       <section class="projects main-section-vert-padding">
-        <h2>Projects</h2>
-        <div class="card">
-          <a href="">
-            <figure>
-              <img class="project-thumbnail" src="" alt="" />
-              <figcaption></figcaption>
-            </figure>
-          </a>
+        <div class="sticky-heading-wrapper">
+          <h2 class="projects-sticky-heading">Projects</h2>
+
+          <div class="card project-card left one">
+            <a class="project-card-link-item" href="./pages/portfolio.html">
+              <figure class="project-figure">
+                <img
+                class="project-thumbnail"
+                src="./public/assets/topsail-home-mobile.png"
+                alt="destination marketing site thumbnail" />
+                <figcaption class="project-card-caption">
+                  Destination Marketing Site - Mobile First Redesign
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+
+          <div class="card project-card right two">
+            <a class="project-card-link-item" href="./pages/portfolio.html">
+              <!-- TODO: ADD SECTION ONCE PROJECT PAGE BUILT-->
+              <figure class="project-figure">
+                <img
+                  class="project-thumbnail"
+                  src="./public/assets/dotnet-home-snip.png"
+                  alt="dot net project thumbnail" />
+                <figcaption class="project-card-caption">
+                  ASP.NET MVC Tutorial App
+                </figcaption>
+              </figure>
+            </a>
+          </div>
         </div>
 
-        <div class="card">
-          <a href="">
-            <figure>
-              <img class="project-thumbnail" src="" alt="" />
-              <figcaption></figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="">
-            <figure>
-              <img class="project-thumbnail" src="" alt="" />
-              <figcaption></figcaption>
+        <div class="card project-card left three last-card">
+          <a class="project-card-link-item" href="./pages/portfolio.html">
+            <figure class="project-figure">
+              <img
+                class="project-thumbnail"
+                src="./public/assets/superjuice-sections.png"
+                alt="dynamic recipe calculator thumbnail" />
+              <figcaption class="project-card-caption">
+                Super Juice - A dynamic batch recipe calculator
+              </figcaption>
             </figure>
           </a>
         </div>
@@ -159,9 +178,19 @@
       </section>
 
       <section class="cta main-section-vert-padding">
-        <div>
-          <h3>Placeholder Text for Call to Action Circling Animated Cube</h3>
-          <div class="placeholder-circle"></div>
+        <div class="cta-wrapper">
+          <img class="cta-text" src="./public/assets/circular-CTA.png" alt="see my studio and building arts work here">
+          
+          <div class="cube-container">
+            <div class="cube">
+              <div class="face top">top</div>
+              <div class="face bottom">bottom</div>
+              <div class="face left">left</div>
+              <div class="face right">right</div>
+              <div class="face front">front</div>
+              <div class="face back">back</div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -180,7 +209,12 @@
         <label class="visually-hidden" for="message">Message</label>
         <textarea id="message" name="message" placeholder="Message"></textarea>
 
-        <button class="footer-button-submit" type="button" onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)">Contact</button>
+        <button
+          class="footer-button-submit"
+          type="button"
+          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)">
+          Contact
+        </button>
       </form>
 
       <section class="footer-social-wrapper">
