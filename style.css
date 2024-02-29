@@ -10,12 +10,6 @@
   --sqrt2: 1.41421356; /* for use in calc() when adjusting hamburger menu button after it transforms into 'X' shape */
   --menu-btn-width: 3rem;
 }
-/* 
-FIXME 
-*/
-/*
-TODO 
-*/
 
 /* Box sizing */
 *,
@@ -93,7 +87,14 @@ select {
 }
 
 /* General */
+/* TODO: BG on HTML is just for midterm mobile-only layout */
+html {
+  background-color: var(--gray-10);
+}
+
 body {
+  /* TODO: Make Responsive Layout. MAX WIDTH SET TO RESTRICT TO MOBILE DESIGN FOR MIDTERM ONLY */
+  max-width: 500px;
   min-height: 100vh;
   background-color: var(--cream);
   color: var(--blue);
@@ -691,9 +692,9 @@ svg.squiggle path {
 }
 
 /* Portfolio */
-h1 {
+.portfolio h1 {
   text-align: center;
-  font-size: clamp(2.5rem, 14vw, 5.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: var(--font-weight-1);
   line-height: var(--font-lineheight-00);
   letter-spacing: var(--font-letterspacing-0);
@@ -701,22 +702,31 @@ h1 {
 }
 
 .portfolio .banner {
-  margin-top: var(--size-10);
-  margin-bottom: var(--size-8);
+  margin: var(--size-8) -1em;
   padding-top: var(--size-4);
   padding-bottom: var(--size-4);
   background-color: var(--blue);
   color: var(--cream);
 
   overflow: hidden;
-  width: 100%;
+  width: 110%;
+  transform: rotate(-5deg);
+
+  /* position: relative;
+  z-index: 2; */
 }
 
-/* UTIL: Scrolling Banner */
-.banner {
+/* .portfolio .banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  overflow: hidden;
-}
+  height: calc(3rem + var(--size-8));
+  transform: rotate(10deg);
+  z-index: 0;
+  background-color: var(--red);
+} */
 
 .banner-text {
   white-space: nowrap;
@@ -728,7 +738,7 @@ h1 {
 }
 
 .banner-text::after {
-  content: '\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0';
+  content: '\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0';
 }
 
 @keyframes banner-scroll {
@@ -753,7 +763,8 @@ h1 {
     'one'
     'two'
     'three';
-  gap: var(--size-8);
+
+  overflow: hidden;
 }
 
 .portfolio-h1 {
@@ -766,6 +777,10 @@ h1 {
 
 .project-two {
   grid-area: 'two';
+  background-color: var(--blue);
+  color: var(--cream);
+  /* padding-top: var(--size-8);
+  padding-bottom: var(--size-8); */
 }
 
 .project-three {
@@ -773,9 +788,7 @@ h1 {
 }
 
 .project-section {
-  margin-bottom: var(--size-10);
-  padding-left: var(--size-4);
-  padding-right: var(--size-4);
+  padding: var(--size-fluid-6) var(--size-4);
 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -797,6 +810,11 @@ h1 {
 .h2-line-left {
   display: block;
   text-align: left;
+}
+
+.h2-line-center {
+  display: block;
+  text-align: center;
 }
 
 .h2-line-right {
@@ -826,7 +844,7 @@ h1 {
   margin-bottom: 0;
 }
 
-.project-img-main {
+.project-img-main, .project-img-secondary {
   box-shadow: var(--shadow-2);
 }
 
@@ -849,13 +867,18 @@ h1 {
   cursor: pointer;
 }
 
+.project-link-item:visited {
+  color: var(--blue);
+}
+
+.project-two .project-link-item:visited {
+  color: var(--cream);
+}
+
 .project-link-item:hover {
   font-style: italic;
 }
 
-.project-link-item:visited {
-  color: var(--blue);
-}
 
 /* TODO: Shift layout of Toolbox on mobile to reflect summary layout */
 .project-toolbox {
@@ -872,7 +895,7 @@ h1 {
 }
 
 .project-img-secondary {
-  margin-top: var(--size-4);
+  margin: var(--size-4) 0;
 }
 
 .project-lessons {
@@ -883,20 +906,27 @@ h1 {
 .about.grid {
   padding: var(--size-4);
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--size-4);
+  gap: var(--size-fluid-4);
+  margin-bottom: var(--size-fluid-6);
 }
 
 .about-h1 {
-  grid-column: span 12;
+  /* grid-column: span 12; */
+  grid-column: 1 / 12;
   font-weight: var(--font-weight-1);
   text-transform: uppercase;
+  text-align: left;
+  font-size: clamp(3.5rem, 15vw, 5.5rem);
+  font-weight: var(--font-weight-1);
+  line-height: .85;
+  letter-spacing: var(--font-letterspacing-0);
 }
 
 .square {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
-  grid-column: span 12;
+  /* grid-column: span 12; */
 }
 
 .square-section-content {
@@ -923,6 +953,14 @@ h1 {
   border: 1px solid var(--blue);
 }
 
+.about-one, .about-three {
+  grid-column: 1 / 11;
+}
+
+.about-two, .about-four {
+  grid-column: 3 / 13;
+}
+
 .about-h2 {
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-1);
@@ -941,9 +979,39 @@ h1 {
   font-style: italic;
 }
 
+/* TODO: Dx issue with this animation */
+/* .wavy {
+  position: relative;
+  border: 1px solid red;
+}
+
+@keyframes bounce {
+  25% {
+    transform: translateY(-25%);
+  }
+  40% {
+    transform: translateY(-3%);
+  }
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+}
+
+.ch1 {
+  animation: bounce 5s infinite;
+} */
+
 @media (min-width: 472px) {
   .square {
-    grid-column: span 8;
+    /* grid-column: span 10; */
+  }
+
+  .about-one, .about-three {
+    grid-column: 1 / 10;
+  }
+  
+  .about-two, .about-four {
+    grid-column: 4 / 13;
   }
 }
 
@@ -971,15 +1039,14 @@ h1 {
 /* Tablet+ Styles */
 @media (min-width: 768px) {
   /* Change Navbar */
-  #menu-button {
-    display: none; /* hide hamburger button */
-  }
+  /* #menu-button {
+    display: none; 
 
   .nav-list {
-    display: flex; /* display nav list as flex row */
+    display: flex; 
     gap: var(--size-3);
     align-items: center;
-  }
+  } */
 
   /* Portfolio page */
   /* Project One */
