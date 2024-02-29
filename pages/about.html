@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="../assets/favicon.jpg" />
+    <link rel="icon" type="image/jpg" href="../assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas | About</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav-bar flex" role="navigation">
+      <nav class="nav-bar flex">
         <div class="logo-wrapper flex">
           <a class="logo" href="%BASE_URL%index.html" aria-label="Home"
             >Tess Thomas</a
@@ -25,8 +25,8 @@
           aria-expanded="false"
           aria-controls="nav-list"
           aria-label="Menu">
-          <div class="line"></div>
-          <div class="line"></div>
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
         <ul id="nav-list" class="nav-list">
           <li class="nav-item">
@@ -43,9 +43,13 @@
           <li class="nav-item">
             <a class="nav-link" href="https://tessthos.wordpress.com/">Blog</a>
           </li>
+          <li class="nav-item">
+            <a href="#address" class="nav-link">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
+
     <main class="about grid">
       <h1 class="about-h1">About <br />me</h1>
       <section class="square about-one">
@@ -150,17 +154,22 @@
             <li><a href="%BASE_URL%pages/portfolio.html">Portfolio</a></li>
             <li><a href="%BASE_URL%pages/about.html">About</a></li>
             <li><a href="%BASE_URL%pages/resume.html">Resume</a></li>
-            <li><a href="https://tessthos.wordpress.com/" target="_blank">Blog</a></li>
+            <li>
+              <a href="https://tessthos.wordpress.com/" target="_blank">Blog</a>
+            </li>
           </ul>
         </section>
 
         <section id="address" class="footer-address-section">
           <address>
-            Tess Thomas<br>
-            Durham, North Carolina<br>
+            Tess Thomas<br />
+            Durham, North Carolina<br />
           </address>
           <div class="flex-row">
-            <img class="phone-icon" src="./public/assets/phone.svg" alt="phone">
+            <img
+              class="phone-icon"
+              src="../public/assets/phone.svg"
+              alt="phone" />
             <a href="tel:+8435555555">843.555.1234</a>
           </div>
         </section>

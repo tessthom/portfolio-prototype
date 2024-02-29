@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="../assets/favicon.jpg" />
+    <link rel="icon" type="image/jpg" href="../assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas | Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav-bar flex" role="navigation">
+      <nav class="nav-bar flex">
         <div class="logo-wrapper flex">
           <a class="logo" href="%BASE_URL%index.html" aria-label="Home">Tess Thomas</a>
         </div>
@@ -23,8 +23,8 @@
           aria-expanded="false"
           aria-controls="nav-list"
           aria-label="Menu">
-          <div class="line"></div>
-          <div class="line"></div>
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
         <ul id="nav-list" class="nav-list">
           <li class="nav-item">
@@ -40,19 +40,22 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://tessthos.wordpress.com/">Blog</a>
+            <li class="nav-item">
+              <a href="#address" class="nav-link">Contact</a>
+            </li>
           </li>
         </ul>
       </nav>
     </header>
+
     <main class="resume">
-      <h1>Resume</h1>
+      <h1 class="resume-h1">Resume</h1>
       <div class="embed-container">
         <embed
           class="resume-embed"
           src="%BASE_URL%assets/tess-thomas-resume.pdf"
           type="application/pdf"
-          width="100%"
-          height="auto" />
+         />
       </div>
     </main>
 
@@ -96,7 +99,7 @@
             Durham, North Carolina<br>
           </address>
           <div class="flex-row">
-            <img class="phone-icon" src="./public/assets/phone.svg" alt="phone">
+            <img class="phone-icon" src="../public/assets/phone.svg" alt="phone">
             <a href="tel:+8435555555">843.555.1234</a>
           </div>
         </section>

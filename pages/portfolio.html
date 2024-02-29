@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="../assets/favicon.jpg" />
+    <link rel="icon" type="image/jpg" href="../assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +12,10 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
   </head>
+
   <body>
     <header class="header">
-      <nav class="nav-bar flex" role="navigation">
+      <nav class="nav-bar flex">
         <div class="logo-wrapper flex">
           <a class="logo" href="%BASE_URL%index.html" aria-label="Home"
             >Tess Thomas</a
@@ -25,8 +26,8 @@
           aria-expanded="false"
           aria-controls="nav-list"
           aria-label="Menu">
-          <div class="line"></div>
-          <div class="line"></div>
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
         <ul id="nav-list" class="nav-list">
           <li class="nav-item">
@@ -41,13 +42,16 @@
           <li class="nav-item">
             <a class="nav-link" href="https://tessthos.wordpress.com/">Blog</a>
           </li>
+          <li class="nav-item">
+            <a href="#address" class="nav-link">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main class="grid portfolio">
       <div class="h1-container banner">
-        <h1 class="portfolio-h1 banner-text"> Portfolio</h1>
+        <h1 class="portfolio-h1 banner-text">Portfolio</h1>
       </div>
 
       <section class="project-section project-one">
@@ -69,8 +73,13 @@
         <div class="project-img-main-container">
           <img
             class="project-img-main"
-            src="../public/assets/topsail-home-mobile-CROP-800.png"
-            alt="home page of destination marketing site" />
+            src="../public/assets/topsail-home-mobile-CROP-400.png"
+            srcset="
+              ../public/assets/topsail-home-mobile-CROP-400.png,
+              ../public/assets/topsail-home-mobile-CROP-800.png 2x
+            "
+            alt="home page of destination marketing site"
+            loading="lazy" />
         </div>
 
         <div class="project-link-container">
@@ -83,19 +92,33 @@
           >
         </div>
 
-          <h3 class="project-h3">Toolbox</h3>
-          <p class="project-toolbox">
-            Figma, Branding, Mobile-first design, Bootstrap, Custom CSS, Vanilla
-            JavaScript, Animation
-          </p>
+        <h3 class="project-h3">Toolbox</h3>
+        <p class="project-toolbox">
+          Figma, Branding, Mobile-first design, Bootstrap, Custom CSS, Vanilla
+          JavaScript, Animation
+        </p>
 
         <div class="project-img-secondary-container">
-          <img class="project-img-secondary" src="../public/assets/topsail-activities-lg-1500.png" alt="Activities page screenshot">
+          <img
+            class="project-img-secondary"
+            src="../public/assets/topsail-activities-600.png"
+            srcset="
+              ../public/assets/topsail-activities-600.png,
+              ../public/assets/topsail-activities-1000.png 1.5x,
+              ../public/assets/topsail-activities-1500.png 2x
+            "
+            alt="Activities page screenshot"
+            loading="lazy" />
         </div>
 
         <div class="project-lessons">
           <h3 class="project-h3">Takeaways</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
+            doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi,
+            rerum labore dicta numquam dolores, ut et officiis enim deserunt
+            aperiam.
+          </p>
         </div>
 
         <!-- <div class="project-img-2">
@@ -158,34 +181,54 @@
         <div class="project-img-main-container">
           <img
             class="project-img-main"
-            src="../public/assets/dotnet-home-snip-1400.png"
-            alt="home page of ASP.NET core MVC app" />
+            src="../public/assets/dotnet-home-snip-600.png"
+            srcset="
+              ../public/assets/dotnet-home-snip-600.png,
+              ../public/assets/dotnet-home-snip-1000.png 1.5x,
+              ../public/assets/dotnet-home-snip-1400.png 2x
+            "
+            alt="home page of ASP.NET core MVC app"
+            loading="lazy" />
         </div>
 
         <div class="project-link-container">
           <h3 class="project-h3">URL</h3>
           <a
-          class="project-link-item"
+            class="project-link-item"
             href="https://github.com/tessthom/tess_thomas_dotnetapp"
             target="_blank"
             >https://github.com/tessthom/dotnetapp</a
           >
         </div>
 
-          <h3 class="project-h3">Toolbox</h3>
-          <p class="project-toolbox">
-            ASP.NET Core, C#, Dynamic routing, Razor Views, Areas with nested
-            layouts, Custom CSS & Bootstrap, Client-side dynamic search
-            auto-complete script.
-          </p>
+        <h3 class="project-h3">Toolbox</h3>
+        <p class="project-toolbox">
+          ASP.NET Core, C#, Dynamic routing, Razor Views, Areas with nested
+          layouts, Custom CSS & Bootstrap, Client-side dynamic search
+          auto-complete script.
+        </p>
 
         <div class="project-img-secondary-container">
-          <img class="project-img-secondary" src="../public/assets/dotnet-main-content-btm-1000.png" alt="Section of .NET tutorial site">
+          <img
+            class="project-img-secondary"
+            src="../public/assets/dotnet-main-content-btm-600.png"
+            srcset="
+              ../public/assets/dotnet-main-content-btm-600.png,
+              ../public/assets/dotnet-main-content-btm-1000.png 1.5x,
+              ../public/assets/dotnet-main-content-btm-1400.png 2x
+            "
+            alt="Section of .NET tutorial site"
+            loading="lazy" />
         </div>
 
         <div class="project-lessons">
           <h3 class="project-h3">Takeaways</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
+            doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi,
+            rerum labore dicta numquam dolores, ut et officiis enim deserunt
+            aperiam.
+          </p>
         </div>
 
         <!-- <div class="project-img-2">
@@ -256,14 +299,20 @@
         <div class="project-img-main-container">
           <img
             class="project-img-main"
-            src="../public/assets/superjuice-home-mobile-800.png"
-            alt="home page of destination marketing site" />
+            src="../public/assets/superjuice-home-mobile-400.png"
+            srcset="
+              ../public/assets/superjuice-home-mobile-400.png,
+              ../public/assets/superjuice-home-mobile-800.png 2x
+            "
+            alt="home page of destination marketing site"
+            loading="lazy" />
         </div>
 
         <div class="project-link-container">
           <h3 class="project-h3">URL</h3>
           <div>
-            <a class="project-link-item"
+            <a
+              class="project-link-item"
               href="https://tessthom.github.io/super-juice-calculator/"
               target="_blank"
               >https://tessthom.github.io/super-juice</a
@@ -271,19 +320,32 @@
           </div>
         </div>
 
-          <h3 class="project-h3">Toolbox</h3>
-          <p class="project-toolbox">
-            Figma logo and illustration design, CSS Grid for Mobile-first
-            design, Dynamic input controls with vanilla JavaScript
-          </p>
+        <h3 class="project-h3">Toolbox</h3>
+        <p class="project-toolbox">
+          Figma logo and illustration design, CSS Grid for Mobile-first design,
+          Dynamic input controls with vanilla JavaScript
+        </p>
 
         <div class="project-img-secondary-container">
-          <img class="project-img-secondary" src="../public/assets/superjuice-calc-mobile-800.png" alt="Calculator for superjuice">
+          <img
+            class="project-img-secondary"
+            src="../public/assets/superjuice-calc-mobile-400.png"
+            srcset="
+              ../public/assets/superjuice-calc-mobile-400.png,
+              ../public/assets/superjuice-calc-mobile-800.png 2x
+            "
+            alt="Calculator for superjuice"
+            loading="lazy" />
         </div>
 
         <div class="project-lessons">
           <h3 class="project-h3">Takeaways</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
+            doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi,
+            rerum labore dicta numquam dolores, ut et officiis enim deserunt
+            aperiam.
+          </p>
         </div>
 
         <!-- <div class="project-img-2">
@@ -351,17 +413,22 @@
             <li><a href="%BASE_URL%pages/portfolio.html">Portfolio</a></li>
             <li><a href="%BASE_URL%pages/about.html">About</a></li>
             <li><a href="%BASE_URL%pages/resume.html">Resume</a></li>
-            <li><a href="https://tessthos.wordpress.com/" target="_blank">Blog</a></li>
+            <li>
+              <a href="https://tessthos.wordpress.com/" target="_blank">Blog</a>
+            </li>
           </ul>
         </section>
 
         <section id="address" class="footer-address-section">
           <address>
-            Tess Thomas<br>
-            Durham, North Carolina<br>
+            Tess Thomas<br />
+            Durham, North Carolina<br />
           </address>
           <div class="flex-row">
-            <img class="phone-icon" src="./public/assets/phone.svg" alt="phone">
+            <img
+              class="phone-icon"
+              src="../public/assets/phone.svg"
+              alt="phone" />
             <a href="tel:+8435555555">843.555.1234</a>
           </div>
         </section>

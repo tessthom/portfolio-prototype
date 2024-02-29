@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="./assets/favicon.jpg" />
+    <link rel="icon" type="image/jpg" href="./assets/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tess Thomas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +12,10 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
     <header class="header">
-      <nav class="nav-bar flex" role="navigation">
+      <nav class="nav-bar flex">
         <div class="logo-wrapper flex">
           <a class="logo" href="./index.html" aria-label="Home">Tess Thomas</a>
         </div>
@@ -23,8 +24,8 @@
           aria-expanded="false"
           aria-controls="nav-list"
           aria-label="Menu">
-          <div class="line"></div>
-          <div class="line"></div>
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
         <ul id="nav-list" class="nav-list">
           <li class="nav-item">
@@ -40,6 +41,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://tessthos.wordpress.com/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#address" class="nav-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -89,8 +93,13 @@
               <figure class="project-figure">
                 <img
                   class="project-thumbnail"
-                  src="./assets/topsail-home-mobile-800.png"
-                  alt="destination marketing site thumbnail" />
+                  src="./assets/topsail-home-mobile-400.png"
+                  srcset="
+                    ./assets/topsail-home-mobile-400.png,
+                    ./assets/topsail-home-mobile-800.png 2x
+                  "
+                  alt="destination marketing site thumbnail"
+                  loading="lazy" />
                 <figcaption class="project-card-caption">
                   Destination Marketing Site - Mobile First Redesign
                 </figcaption>
@@ -104,8 +113,14 @@
               <figure class="project-figure">
                 <img
                   class="project-thumbnail"
-                  src="./assets/dotnet-main-content-1400.png"
-                  alt="dot net project thumbnail" />
+                  src="./assets/dotnet-main-content-600.png"
+                  srcset="
+                    ./assets/dotnet-main-content-600.png,
+                    ./assets/dotnet-main-content-1000.png 1.5x,
+                    ./assets/dotnet-main-content-1400.png 2x
+                  "
+                  alt="dot net app main view"
+                  loading="lazy" />
                 <figcaption class="project-card-caption">
                   ASP.NET MVC Tutorial App
                 </figcaption>
@@ -119,8 +134,14 @@
             <figure class="project-figure">
               <img
                 class="project-thumbnail"
-                src="./assets/superjuice-sections-1400.png"
-                alt="dynamic recipe calculator thumbnail" />
+                src="./assets/superjuice-sections-600.png"
+                srcset="
+                  ./assets/superjuice-sections-600.png,
+                  ./assets/superjuice-sections-1000.png 1.5x,
+                  ./assets/superjuice-sections-1400.png 2x
+                "
+                alt="dynamic recipe calculator thumbnail"
+                loading="lazy" />
               <figcaption class="project-card-caption">
                 Super Juice - A dynamic batch recipe calculator
               </figcaption>
@@ -186,7 +207,7 @@
         </div>
       </section>
 
-      <section class="cta main-section-vert-padding">
+      <div class="cta main-section-vert-padding">
         <div class="cta-wrapper">
           <img
             class="cta-text"
@@ -215,7 +236,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer class="footer main-section-vert-padding">
@@ -248,17 +269,22 @@
             <li><a href="%BASE_URL%pages/portfolio.html">Portfolio</a></li>
             <li><a href="%BASE_URL%pages/about.html">About</a></li>
             <li><a href="%BASE_URL%pages/resume.html">Resume</a></li>
-            <li><a href="https://tessthos.wordpress.com/" target="_blank">Blog</a></li>
+            <li>
+              <a href="https://tessthos.wordpress.com/" target="_blank">Blog</a>
+            </li>
           </ul>
         </section>
 
         <section id="address" class="footer-address-section">
           <address>
-            Tess Thomas<br>
-            Durham, North Carolina<br>
+            Tess Thomas<br />
+            Durham, North Carolina<br />
           </address>
           <div class="flex-row">
-            <img class="phone-icon" src="./public/assets/phone.svg" alt="phone">
+            <img
+              class="phone-icon"
+              src="./public/assets/phone.svg"
+              alt="phone" />
             <a href="tel:+8435555555">843.555.1234</a>
           </div>
         </section>
