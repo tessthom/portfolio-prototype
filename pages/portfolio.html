@@ -16,7 +16,9 @@
     <header class="header">
       <nav class="nav-bar flex" role="navigation">
         <div class="logo-wrapper flex">
-          <a class="logo" href="%BASE_URL%index.html">Tess Thomas</a>
+          <a class="logo" href="%BASE_URL%index.html" aria-label="Home"
+            >Tess Thomas</a
+          >
         </div>
         <button
           class="menu-button"
@@ -44,49 +46,58 @@
     </header>
 
     <main class="grid portfolio">
-      <div class="h1-container">
-        <h1 class="portfolio-h1">Portfolio</h1>
+      <div class="h1-container banner">
+        <h1 class="portfolio-h1 banner-text"> Portfolio</h1>
       </div>
 
       <section class="project-section project-one">
-        <div class="project-intro">
+        <div class="project-heading-container">
           <h2 class="project-heading">
-            Destination Marketing Visitor's Site Redesign
+            <span class="h2-line-left">Visitors' Site</span>
+            <span class="h2-line-right">Redesign</span>
           </h2>
+        </div>
+
+        <h3 class="project-summary-h3 project-h3">About</h3>
+
+        <p class="project-summary">
+          A 90's destination marketing print ad-inspired full redesign and
+          partial content refresh for a small North Carolina beach town's
+          visitor information website.
+        </p>
+
+        <div class="project-img-main-container">
           <img
-            class="project-main-img"
-            src="../public/assets/topsail-home-mobile-800.png"
+            class="project-img-main"
+            src="../public/assets/topsail-home-mobile-CROP-800.png"
             alt="home page of destination marketing site" />
-          <p class="project-summary">
-            A 90's magazine ad-inspired full redesign and partial content
-            refresh for a small North Carolina beach town's visitor information
-            website.
+        </div>
+
+        <div class="project-link-container">
+          <h3 class="project-h3">URL</h3>
+          <a
+            class="project-link-item"
+            href="https://tessthom.github.io/topsail-v2/index.html"
+            target="_blank"
+            >https://tessthom.github.io/topsail</a
+          >
+        </div>
+
+        <div class="project-toolbox">
+          <h3 class="project-h3">Toolbox</h3>
+          <p>
+            Figma, Branding, Mobile-first design, Bootstrap, Custom CSS, Vanilla
+            JavaScript, Animation
           </p>
         </div>
 
-        <div class="role-skill-url-container">
-          <div class="role-container">
-            <h3 class="role-h3">Role</h3>
-            <p class="roles">Web Designer, Copywriter, Front-end Developer</p>
-          </div>
+        <div class="project-img-secondary-container">
+          <img class="project-img-secondary" src="../public/assets/topsail-activities-lg-1500.png" alt="Activities page screenshot">
+        </div>
 
-          <div class="project-responsibilities">
-            <h3>Responsibilities</h3>
-            <p>
-              Figma, Branding, Mobile-first design, Bootstrap, Custom CSS,
-              Vanilla JavaScript, Animation
-            </p>
-          </div>
-
-          <div class="url">
-            <h3>URL</h3>
-            <a
-              class="project-link-item"
-              href="https://tessthom.github.io/topsail-v2/index.html"
-              target="_blank"
-              >https://tessthom.github.io/topsail</a
-            >
-          </div>
+        <div class="project-lessons">
+          <h3 class="project-h3">Takeaways</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
         </div>
 
         <!-- <div class="project-img-2">
@@ -129,42 +140,55 @@
       </section>
 
       <section class="project-section project-two">
-        <div class="project-intro">
-          <h2 class="project-heading">ASP.NET Core MVC Tutorial App</h2>
+        <div class="project-heading-container">
+          <h2 class="project-heading">
+            <span class="h2-line-left">ASP.NET</span>
+            <span class="h2-line-right">Core MVC</span>
+            <span class="h2-line-left">Tutorial App</span>
+          </h2>
+        </div>
+
+        <h3 class="project-summary-h3 project-h3">About</h3>
+
+        <p class="project-summary">
+          A full-stack ASP.NET Core tutorial app, built to practice my .NET and
+          MVC architecture skills. With razor layouts, defined areas and dynamic
+          routing, this project was an exciting challenge after focusing
+          predominately on React and Vanilla JavaScript builds.
+        </p>
+
+        <div class="project-img-main-container">
           <img
-            class="project-main-img"
+            class="project-img-main"
             src="../public/assets/dotnet-home-snip-1400.png"
             alt="home page of ASP.NET core MVC app" />
-          <p class="project-summary">
-            A full-stack ASP.NET Core tutorial app, built to practice my .NET
-            and MVC architecture skills. With razor layouts, defined areas and
-            dynamic routing, this project was an exciting challenge after
-            focusing predominately on React and Vanilla JavaScript builds.
+        </div>
+
+        <div class="project-link-container">
+          <h3 class="project-h3">URL</h3>
+          <a
+            href="https://github.com/tessthom/tess_thomas_dotnetapp"
+            target="_blank"
+            >https://github.com/tessthom/dotnetapp</a
+          >
+        </div>
+
+        <div class="project-toolbox">
+          <h3 class="project-h3">Toolbox</h3>
+          <p>
+            ASP.NET Core, C#, Dynamic routing, Razor Views, Areas with nested
+            layouts, Custom CSS & Bootstrap, Client-side dynamic search
+            auto-complete script.
           </p>
         </div>
 
-        <div class="role-skill-url-container">
-          <div class="role">
-            <h3>Role</h3>
-            <p>Web Designer, Copywriter, Full-stack Developer</p>
-          </div>
-          <div class="project-responsibilities">
-            <h3>Skills</h3>
-            <p>
-              ASP.NET Core, C#, Dynamic routing, Razor Views, Areas with nested
-              layouts, Custom CSS & Bootstrap, Client-side dynamic search
-              auto-complete script.
-            </p>
-          </div>
+        <div class="project-img-secondary-container">
+          <img class="project-img-secondary" src="../public/assets/dotnet-main-content-btm-1000.png" alt="Section of .NET tutorial site">
+        </div>
 
-          <div class="url">
-            <h3>URL</h3>
-            <a
-              href="https://github.com/tessthom/tess_thomas_dotnetapp"
-              target="_blank"
-              >https://github.com/tessthom/dotnetapp</a
-            >
-          </div>
+        <div class="project-lessons">
+          <h3 class="project-h3">Takeaways</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
         </div>
 
         <!-- <div class="project-img-2">
@@ -214,44 +238,57 @@
       </section>
 
       <section class="project-section project-three">
-        <div class="project-intro">
-          <h2 class="project-heading">Super Juice Recipe Calculator</h2>
+        <div class="project-heading-container">
+          <h2 class="project-heading">
+            <span class="h2-line-left">SuperJuice</span
+            ><span class="h2-line-right">Batch</span
+            ><span class="h2-line-right">Calculator</span>
+          </h2>
+        </div>
+
+        <h3 class="project-summary-h3 project-h3">About</h3>
+
+        <p class="project-summary">
+          A mobile-first, dynamic recipe calculator app for an innovative
+          bartending product that exponentially reduces citrus waste and creates
+          a nearly shelf-stable product, without losing out on flavor. Being a
+          relatively new invention, it can be hard to find an authoritative
+          recipe for Super Juice, let alone a calculator. So I made one.
+        </p>
+
+        <div class="project-img-main-container">
           <img
-            class="project-main-img"
+            class="project-img-main"
             src="../public/assets/superjuice-home-mobile-800.png"
             alt="home page of destination marketing site" />
-          <p class="project-summary">
-            A mobile-first, dynamic recipe calculator app for an innovative
-            bartending product that exponentially reduces citrus waste and
-            creates a nearly shelf-stable product, without losing out on flavor.
-            Being a relatively new invention, it can be hard to find an
-            authoritative recipe for Super Juice, let alone a calculator. So I
-            made one.
+        </div>
+
+        <div class="project-link-container">
+          <h3 class="project-h3">URL</h3>
+          <div>
+            <a
+              href="https://tessthom.github.io/super-juice-calculator/"
+              target="_blank"
+              >https://tessthom.github.io/super-juice</a
+            >
+          </div>
+        </div>
+
+        <div class="project-toolbox">
+          <h3 class="project-h3">Toolbox</h3>
+          <p>
+            Figma logo and illustration design, CSS Grid for Mobile-first
+            design, Dynamic input controls with vanilla JavaScript
           </p>
         </div>
 
-        <div class="role-skill-url-container">
-          <div class="role">
-            <h3>Role</h3>
-            <p>Web Designer, Copywriter, Front-end Developer</p>
-          </div>
-          <div class="project-responsibilities">
-            <h3>Skills</h3>
-            <p>
-              Figma logo and illustration design, CSS Grid for Mobile-first
-              design, Dynamic input controls with vanilla JavaScript
-            </p>
-          </div>
-          <div class="url">
-            <h3>URL</h3>
-            <div>
-              <a
-                href="https://tessthom.github.io/super-juice-calculator/"
-                target="_blank"
-                >https://tessthom.github.io/super-juice</a
-              >
-            </div>
-          </div>
+        <div class="project-img-secondary-container">
+          <img class="project-img-secondary" src="../public/assets/superjuice-calc-mobile-800.png" alt="Calculator for superjuice">
+        </div>
+
+        <div class="project-lessons">
+          <h3 class="project-h3">Takeaways</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, doloribus nisi. Nulla enim consectetur.Reprehenderit, atque quasi, rerum labore dicta numquam dolores, ut et officiis enim deserunt aperiam.</p>
         </div>
 
         <!-- <div class="project-img-2">
