@@ -792,6 +792,72 @@ h1 {
   font-style: italic;
 }
 
+/* About */
+.about.grid {
+  padding: var(--size-4);
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--size-4);
+}
+
+.about-h1 {
+  grid-column: span 12;
+  font-weight: var(--font-weight-1);
+  text-transform: uppercase;
+}
+
+.square {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  grid-column: span 12;
+}
+
+.square-section-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--size-5);
+}
+
+.about-one {
+  background-color: var(--blue);
+  color: var(--cream);
+}
+
+.about-two, .about-three, .about-four {
+  border: 1px solid var(--blue);
+}
+
+.about-h2 {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-1);
+  text-transform: uppercase;
+}
+
+.square p {
+  font-weight: var(--font-weight-1);
+}
+
+.about-one a {
+  color: var(--cream);
+}
+
+.square a:hover {
+  font-style: italic;
+}
+
+@media (min-width: 472) {
+  .square {
+    grid-column: span 8;
+  }
+}
+
 /* Resume */
 .resume {
   padding: var(--size-4);
