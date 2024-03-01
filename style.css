@@ -282,11 +282,11 @@ p {
 }
 
 .footer h3 {
-  font-size: var(--font-size-7);
+  font-size: var(--font-size-8);
   font-weight: var(--font-weight-1);
   font-style: italic;
-  line-height: var(--font-lineheight-00);
-  padding: var(--size-3) 0;
+  line-height: 0.8;
+  padding: var(--size-3) 0 var(--size-4);
 }
 
 .contact-form {
@@ -322,10 +322,10 @@ p {
 }
 
 .sitemap h4 {
-  font-size: var(--font-size-4);
+  font-size: 1.75rem;
   font-weight: var(--font-weight-00);
   font-style: italic;
-  border-bottom: 1px solid var(--cream);
+  /* border-bottom: 1px solid var(--cream); */
 }
 
 .sitemap a {
@@ -366,7 +366,7 @@ p {
 
 .footer-address-section a {
   display: inline-block;
-  margin-left: .5em;
+  margin-left: 0.5em;
   text-decoration: none;
   color: var(--cream);
 }
@@ -391,12 +391,18 @@ p {
   border: 1px solid var(--cream);
   /* TODO: CHANGE ABOVE VAR TO HSLA TO BE LESS OPAQUE */
   cursor: pointer;
-  width: min(10vw, 3rem);
-  height: min(10vw, 3rem);
+  width: min(15vw, 3.75rem);
+  height: min(15vw, 3.75rem);
   border-radius: 50%;
+  border-color: hsla(44, 48%, 95%, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.footer-social-button:hover {
+  border-color: hsla(44, 48%, 95%, 1);
+  border-width: 2px;
 }
 
 .footer-social-svg {
@@ -602,6 +608,10 @@ svg.squiggle path {
   align-items: center;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .details-item:first-of-type .summary {
   border-top: 1px solid var(--cream);
   padding-top: var(--size-6);
@@ -684,7 +694,7 @@ svg.squiggle path {
   position: absolute;
   /* TODO: Adjust positioning to keep cube centered responsively */
   top: 35%;
-  left: 35%;
+  left: 34%;
   width: 30%;
   height: 30%;
   perspective: 500px;
@@ -910,7 +920,8 @@ svg.squiggle path {
   margin-bottom: 0;
 }
 
-.project-img-main, .project-img-secondary {
+.project-img-main,
+.project-img-secondary {
   box-shadow: var(--shadow-2);
 }
 
@@ -944,7 +955,6 @@ svg.squiggle path {
 .project-link-item:hover {
   font-style: italic;
 }
-
 
 /* TODO: Shift layout of Toolbox on mobile to reflect summary layout */
 .project-toolbox {
@@ -987,7 +997,7 @@ svg.squiggle path {
   text-align: left;
   font-size: clamp(3.5rem, 15vw, 5.5rem);
   font-weight: var(--font-weight-1);
-  line-height: .85;
+  line-height: 0.85;
   letter-spacing: var(--font-letterspacing-0);
 }
 
@@ -1022,11 +1032,13 @@ svg.squiggle path {
   border: 1px solid var(--blue);
 }
 
-.about-one, .about-three {
+.about-one,
+.about-three {
   grid-column: 1 / 11;
 }
 
-.about-two, .about-four {
+.about-two,
+.about-four {
   grid-column: 3 / 13;
 }
 
@@ -1071,11 +1083,13 @@ svg.squiggle path {
 } */
 
 @media (min-width: 472px) {
-  .about-one, .about-three {
+  .about-one,
+  .about-three {
     grid-column: 1 / 10;
   }
-  
-  .about-two, .about-four {
+
+  .about-two,
+  .about-four {
     grid-column: 4 / 13;
   }
 }
@@ -1092,7 +1106,7 @@ svg.squiggle path {
   text-align: left;
   font-size: clamp(3.5rem, 15vw, 5.5rem);
   font-weight: var(--font-weight-1);
-  line-height: .85;
+  line-height: 0.85;
   letter-spacing: var(--font-letterspacing-0);
 }
 
