@@ -2,6 +2,8 @@
 
 This is a site built to showcase my web development and design skills.
 
+[https://wcet.waketech.edu/abthomas3/web287/Projects/Portfolio/index.html]
+
 ![Home page intro](/public/assets/home-snip.png)
 
 ## Overview
