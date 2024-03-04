@@ -10,7 +10,7 @@ The first iteration of this site was intended to explore and evaluate the design
 
 I've very much enjoyed the speed of Vite's dev server and the way it "pre-bundles" dependencies, letting the browser take on more of the work by strongly caching those modules and making source code module requests conditional. Efficiency is the best!
 
-The only hiccup I ran into was sorting out how to configure file paths for production vs for the dev server. For the site to run properly on the WTCC server, I needed to account for the additional directories between the 'root' and the project files, subbing `/abthomas3/web287/Projects/Portfolio/` for `/`. To account for different environments I just specified a conditional that checks Node's core `process` module `env.NODE_ENV` environment variable for the `production` value. It then sets a `%BASE_URL%` placeholder to the appropriate path value.
+The only hiccup I ran into was configuring file paths for build vs the dev server. For the site to run properly on the WTCC server, I needed to account for the additional directories between the 'root' and the project files, subbing `/abthomas3/web287/Projects/Portfolio/` for `/`. To account for different environments I just specified a conditional that checks Node's core `process` module `env.NODE_ENV` environment variable for the `production` value. It then sets a `%BASE_URL%` placeholder to the appropriate path value.
 
 ---
 
@@ -24,21 +24,29 @@ The only hiccup I ran into was sorting out how to configure file paths for produ
 - [x] Image optimization
 - [x] Cross-browser compatibility
 
-#### Personal Goal Additions
+#### Personal Additions
 
 - [x] Install and experiment with Open Props
 - [x] Use Vite.js build tool
 - [x] Test CSS-only animations
-- [x] 
+- [x] Try new mobile grid layout
+- [x] Validate HTML + CSS
 
-```
-Note if this line renders or not and if so what the backticks render as
-```
+## Final Iteration Checklist / Personal TODO
 
-## Final Iteration Checklist
-
-- [ ] Responsive layout
+- [ ] Responsive layout for larger screens
+- [ ] Technical SEO
 - [ ] Identify and use different font (Open Props' and Cormorant Garamond not quite right)
+- [ ] 2 more portfolio pieces (BarKey, new CRUD ops app)
+- [ ] Reformulate size/type system (maybe replace Open Props `--size-n` properties)
+- [ ] FIX: Cube displays right of center on actual mobile devices vs browser emulation
+- [ ] FIX: Dropdown nav menu not at full width due to body constraint for midterm submission.
+- [ ] FIX: Swap Tops'l images index.html#projects vs `portfolio.html`.
+- [ ] FIX: Resume overflow from PDF embed on true mobile devices.
+- [ ] Add JS API solution for scroll based events so cube not animating from page load.
+- [ ] Rework projects page layout for mobile.
+- [ ] ID and implement form submission tool.
+- [ ] Pass WCAG checklist.
 
 ---
 
