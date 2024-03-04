@@ -74,4 +74,5 @@ WTCC Server through May 2024, future hosting TBD.
 
 ## License
 
+TODO: Actually implement below license
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
