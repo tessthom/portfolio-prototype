@@ -2,13 +2,13 @@
 
 This is a site built to showcase my web development and design skills.
 
-[https://wcet.waketech.edu/abthomas3/web287/Projects/Portfolio/index.html]
+[Live site on WTCC server](https://wcet.waketech.edu/abthomas3/web287/Projects/Portfolio/index.html)
 
 ![Home page intro](/public/assets/home-snip.png)
 
 ## Overview
 
-The first iteration of this site was intended to explore and evaluate the design in mobile-only form, test out integrating Open Props with native CSS, and to explore the benefits of developing with Vite.js. 
+The first iteration of this site was intended to explore and evaluate the design in mobile-only form, test out integrating Open Props with native CSS, and to explore the benefits of developing with Vite.js.
 
 I've very much enjoyed the speed of Vite's dev server and the way it "pre-bundles" dependencies, letting the browser take on more of the work by strongly caching those modules and making source code module requests conditional. Efficiency is the best!
 
@@ -60,17 +60,17 @@ WTCC Server through May 2024, future hosting TBD.
 
 ## Built With
 
-* [OpenProps](https://open-props.style/) - Lightweight CSS Framework used for it's incrementally adoptable custom properties. I've been curious about this framework for a while because it's so light and customizable. I can use the props that I find helpful, not need to worry about fighting their specificity or clogging up my HTML with a ton of Bootstrap-y classes, and only ship the props I use. Thus far it's been simple to install, configure, and integrate with my own CSS.
-* [Vite.js](https://vitejs.dev/guide/) - Build tool selected for its lightning fast dev server and out-of-the-box PostCSS support, which was needed in order to leverage OpenProps' PostCSS (Just In Time) Props.
-* [FileZilla](https://filezilla-project.org/) - To upload Vite-built `dist/` contents to the school server.
-* [FORM_TOOL_HERE](#) - TODO: CITE FORM TOOL HERE WHEN DECIDED UPON.
+- [OpenProps](https://open-props.style/) - Lightweight CSS Framework used for it's incrementally adoptable custom properties. I've been curious about this framework for a while because it's so light and customizable. I can use the props that I find helpful, not need to worry about fighting their specificity or clogging up my HTML with a ton of Bootstrap-y classes, and only ship the props I use. Thus far it's been simple to install, configure, and integrate with my own CSS.
+- [Vite.js](https://vitejs.dev/guide/) - Build tool selected for its lightning fast dev server and out-of-the-box PostCSS support, which was needed in order to leverage OpenProps' PostCSS (Just In Time) Props.
+- [FileZilla](https://filezilla-project.org/) - To upload Vite-built `dist/` contents to the school server.
+- [FORM_TOOL_HERE](#) - TODO: CITE FORM TOOL HERE WHEN DECIDED UPON.
 
 ---
 
 ## Acknowledgments
 
-* Big ups to Kevin Powell for being a consistent source of CSS inspiration and refresher content.His animation content was helpful in sorting out how to build the "cube" on my Home page.
-* TODO: CITE ANY FURTHER RESOURCES HERE AS NEEDED
+- Big ups to Kevin Powell for being a consistent source of CSS inspiration and refresher content.His animation content was helpful in sorting out how to build the "cube" on my Home page.
+- TODO: CITE ANY FURTHER RESOURCES HERE AS NEEDED
 
 ---
 
