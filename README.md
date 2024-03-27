@@ -10,9 +10,7 @@ This is a site built to showcase my web development and design skills.
 
 The first iteration of this site was intended to explore and evaluate the design in mobile-only form, test out integrating Open Props with native CSS, and to explore the benefits of developing with Vite.js.
 
-I've very much enjoyed the speed of Vite's dev server and the way it "pre-bundles" dependencies, letting the browser take on more of the work by strongly caching those modules and making source code module requests conditional. Efficiency is the best!
-
-The only hiccup I ran into was configuring file paths for build vs the dev server. For the site to run properly on the WTCC server, I needed to account for the additional directories between the 'root' and the project files, subbing `/abthomas3/web287/Projects/Portfolio/` for `/`. To account for different environments I just specified a conditional that checks Node's core `process` module `env.NODE_ENV` environment variable for the `production` value. It then sets a `%BASE_URL%` placeholder to the appropriate path value.
+Vite's dev server is awesome. I think I'll stick to it for the second iteration of this site rather than any kind of rebuild. Time to make things responsive...
 
 ---
 
