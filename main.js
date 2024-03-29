@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 import './js/components/navbar.js';
 import './js/components/squiggle.js';
+import './js/components/contact.js';
 
 document.querySelector('#app').innerHTML = `
   <div>
