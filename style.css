@@ -1208,29 +1208,26 @@ button:hover {
   /* Tablet: Footer Slider Form */
   .slider-form-wrapper {
     transform: translateX(-100%);
-    display: none;
-    transition: translateX 300ms ease-in-out;
-  }
-  .slider-form-wrapper.show {
-    transform: translateX(0);
-    display: block;
-    z-index: 999;
+    transition: transform 300ms ease-in-out;
 
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 100%;
+    width: 100%; 
     height: 100vh;
-
-    border: 1px solid red;
     background-color: var(--blue);
     color: var(--cream);
   }
-  .show .slider-form {
+  .slider-form-wrapper.show {
+    transform: translateX(0);
+
+    z-index: 999;
+  }
+  .slider-form {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
-    padding: 1rem 0 4rem;
+    padding: .5rem .5rem 0 4rem;
   }
   .slider-close-btn {
     grid-column: 12 / 13;
@@ -1238,33 +1235,34 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 4rem;
     height: 4rem;
     border: 2px solid var(--cream);
     border-radius: 50%;
   }
-  .slider-close-btn:hover {
+  .slider-close-btn:hover, .slider-submit:hover {
     background-color: var(--cream);
     color: var(--blue);
     cursor: pointer;
   }
-  .slider-form-wrapper.show h3 {
+  .slider-form-wrapper h3 {
     grid-column: 4 / 10;
-    grid-row: 2 / 3;
+    grid-row: 1 / 3;
     font-size: 6rem;
-    /* padding-top: 0; */
+    
     font-weight: var(--font-weight-1);
     font-style: italic;
     line-height: 0.8;
-    padding: 0 0 1rem;
+    padding: 3rem 0 1rem;
   }
   .slider-form-intro {
     font-size: 1.25rem;
     grid-column: 4 / 10;
     grid-row: 3 / 4;
 
-    margin: .5rem 0 1.5rem;
-    line-height: 1.5em;
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.25em;
   }
   .slider-form-inputs {
     grid-column: 4 / 10;
@@ -1272,10 +1270,13 @@ button:hover {
 
     width: 100%;
   }
-  .slider-form-inputs input, .slider-form-inputs textarea {
+  .slider-form-inputs input,
+  .slider-form-inputs textarea {
     width: 100%;
     margin-bottom: 1.5rem;
     padding: 0.5em;
+    border: none;
+    border-radius: .25em;
     font-size: 1.25rem;
   }
   .slider-submit {
@@ -1283,7 +1284,11 @@ button:hover {
     grid-row: 6 / 7;
 
     text-transform: uppercase;
+    border: 2px solid var(--cream);
+    background-color: var(--blue);
+    color: var(--cream);
   }
+
 
   /* Tablet - Home */
   .home {

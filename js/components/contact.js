@@ -10,5 +10,5 @@ function toggleSlider() {
 }
 
 openBtn.addEventListener('click', toggleSlider);
-menuBtn.addEventListener('click', toggleSlider);
+closeBtn.addEventListener('click', toggleSlider);
 submitBtn.addEventListener('click', toggleSlider);
