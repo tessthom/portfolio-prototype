@@ -59,6 +59,43 @@
       </div>
     </main>
 
+    <div class="slider-form-wrapper">
+      <form class="slider-form" action="#">
+        <div class="slider-close-btn">
+          <p>X</p>
+        </div>
+        <h3 id="address">Oh hey there!</h3>
+
+        <p class="slider-form-intro">
+          If you need a thoughtful hand with a new build or refresh of an old
+          site, or you have a killer chicken wing recipe, drop me a line
+          below.<br /><br />(Please allow a few days response time if it's
+          lowcountry shrimping season)
+        </p>
+
+        <div class="slider-form-inputs">
+          <label for="name" class="visually-hidden mobile">Name</label>
+          <input type="text" id="name" name="name" placeholder="Name" />
+          <label class="visually-hidden mobile" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" />
+          <label class="visually-hidden mobile" for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+          ></textarea>
+        </div>
+
+        <button
+          class="slider-submit"
+          type="button"
+          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+
     <footer class="footer main-section-vert-padding">
       <!-- TODO: Build Actual Email Form! -->
       <form class="contact-form" action="#">
@@ -75,8 +112,7 @@
 
         <button
           class="footer-button-submit"
-          type="button"
-          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)">
+          type="button">
           Contact
         </button>
       </form>
@@ -153,5 +189,6 @@
 
     <script type="module" src="../main.js"></script>
     <script type="module" src="../js/resume.js"></script>
+    <script type="module" src="../js/components/contact.js"></script>
   </body>
 </html>

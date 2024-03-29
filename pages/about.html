@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -24,7 +25,8 @@
           class="menu-button"
           aria-expanded="false"
           aria-controls="nav-list"
-          aria-label="Menu">
+          aria-label="Menu"
+        >
           <span class="line"></span>
           <span class="line"></span>
         </button>
@@ -117,30 +119,84 @@
         <div class="square-section-content">
           <h2 class="about-h2">Food is Good</h2>
           <p>
-            Nothing makes me happier than fixing a meal for my little family. Being raised by Greeks and southerners means food is my primary love language. I'm a little bit obsessed with making the perfect chicken wing and think tomato sandwiches in the summertime are a top-10 possible human experience.
+            Nothing makes me happier than fixing a meal for my little family.
+            Being raised by Greeks and southerners means food is my primary love
+            language. I'm a little bit obsessed with making the perfect chicken
+            wing and think tomato sandwiches in the summertime are a top-10
+            possible human experience.
           </p>
         </div>
       </section>
     </main>
 
+    <div class="slider-form-wrapper">
+      <form class="slider-form" action="#">
+        <div class="slider-close-btn">
+          <p>X</p>
+        </div>
+        <h3 id="address">Oh hey there!</h3>
+
+        <p class="slider-form-intro">
+          If you need a thoughtful hand with a new build or refresh of an old
+          site, or you have a killer chicken wing recipe, drop me a line
+          below.<br /><br />(Please allow a few days response time if it's
+          lowcountry shrimping season)
+        </p>
+
+        <div class="slider-form-inputs">
+          <label for="name" class="visually-hidden mobile">Name</label>
+          <input type="text" id="name" name="name" placeholder="Name" />
+          <label class="visually-hidden mobile" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" />
+          <label class="visually-hidden mobile" for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+          ></textarea>
+        </div>
+
+        <button
+          class="slider-submit"
+          type="button"
+          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+
     <footer class="footer main-section-vert-padding">
-      <!-- TODO: Build Actual Email Form! -->
       <form class="contact-form" action="#">
         <h3 id="address">Let's work<br />together</h3>
 
         <label for="name" class="visually-hidden mobile">Name</label>
-        <input type="text" id="name" name="name" class="mobile" placeholder="Name" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="mobile"
+          placeholder="Name"
+        />
 
         <label class="visually-hidden mobile" for="email">Email</label>
-        <input type="email" id="email" name="email" class="mobile" placeholder="Email" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="mobile"
+          placeholder="Email"
+        />
 
         <label class="visually-hidden mobile" for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Message" class="mobile"></textarea>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"
+          class="mobile"
+        ></textarea>
 
-        <button
-          class="footer-button-submit"
-          type="button"
-          onclick="alert(`Let's just pretend this thing has a backend and your message was submitted :p`)">
+        <button class="footer-button-submit" type="button">
           Contact
         </button>
       </form>
@@ -168,7 +224,8 @@
             <img
               class="phone-icon"
               src="../public/assets/phone.svg"
-              alt="phone" />
+              alt="phone"
+            />
             <a href="tel:+8435555555">843.555.1234</a>
           </div>
         </section>
@@ -180,7 +237,8 @@
             <img
               class="footer-social-svg"
               src="../assets/github-logo.svg"
-              alt="github" />
+              alt="github"
+            />
           </div>
         </a>
 
@@ -189,7 +247,8 @@
             <img
               class="footer-social-svg"
               src="../assets/codepen-logo.svg"
-              alt="codepen" />
+              alt="codepen"
+            />
           </div>
         </a>
 
@@ -198,18 +257,21 @@
             <img
               class="footer-social-svg"
               src="../assets/instagram-logo.svg"
-              alt="instagram" />
+              alt="instagram"
+            />
           </div>
         </a>
 
         <a
           class="footer-social-link-item"
-          href="https://www.linkedin.com/in/tess-thomas-dev/">
+          href="https://www.linkedin.com/in/tess-thomas-dev/"
+        >
           <div class="footer-social-button">
             <img
               class="footer-social-svg"
               src="../assets/linkedin-logo.svg"
-              alt="linkedin" />
+              alt="linkedin"
+            />
           </div>
         </a>
       </section>
@@ -221,6 +283,6 @@
     </footer>
 
     <script type="module" src="../main.js"></script>
-    <script type="module" src="../js/contact.js"></script>
+    <script type="module" src="../js/components/contact.js"></script>
   </body>
 </html>
