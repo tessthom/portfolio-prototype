@@ -65,7 +65,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -74,12 +73,10 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
   .cta-text,
   .cube-container {
     animation: none;
   }
-
   .cube {
     animation: none;
     transform: rotate3d(-0.5, -1, 0.15, 45deg);
@@ -87,14 +84,7 @@ select {
 }
 
 /* General */
-/* TODO: BG on HTML is just for midterm mobile-only layout */
-/* html {
-  background-color: var(--gray-10);
-} */
-
 body {
-  /* TODO: Make Responsive Layout. MAX WIDTH SET TO RESTRICT TO MOBILE DESIGN FOR MIDTERM ONLY */
-  /* max-width: 500px; */
   min-height: 100vh;
   background-color: var(--cream);
   color: var(--blue);
@@ -106,7 +96,6 @@ body {
   ); /* 1rem margin @ left and right on smaller screens */
   margin-inline: auto; /* horizontally center body based on above */
 }
-
 h1,
 h2,
 h3,
@@ -118,52 +107,40 @@ h6,
   font-family: var(--font-serif);
   letter-spacing: var(--font-letterspacing-0);
 }
-
-p {
+/* p {
   text-wrap: balance;
-}
+} */
 
 /* Utility Classes */
-/* TODO: Add helpful classes to add to HTML like `.grid-col-span-2 { span 2; }` */
 .grid {
   display: grid;
   place-content: center;
 }
-
 .flex {
   display: flex;
   gap: var(--size-3);
 }
-
 .main-section-vert-padding {
-  padding-top: var(--size-8);
-  padding-bottom: var(--size-8);
+  padding-top: var(--size-6);
+  padding-bottom: var(--size-6);
 }
 
 /* Components */
 /* Navbar */
-.header {
-  padding: var(--size-4) var(--size-4) 0;
-}
-
 .nav-bar {
   position: relative; /* create positioning context for the dropdown nav-list */
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
-
 .logo-wrapper {
   margin-right: auto; /* easy sub instead of setting justify-content: space-between on the nav-bar flex container */
   align-items: center;
 }
-
 .logo {
   font-size: var(--font-size-5);
   font-weight: 100;
   line-height: var(--font-lineheight-00);
-  padding-top: 0.17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. May be impossible w/ current CSS? */
+  padding-top: 0.17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. Possible w/ current CSS? */
 }
-
 .logo,
 .nav-link {
   text-decoration: none;
@@ -179,7 +156,6 @@ p {
   height: var(--menu-btn-width);
   transition: transform 0.3s ease-in-out;
 }
-
 .line {
   display: block;
   background: var(--blue);
@@ -189,25 +165,20 @@ p {
   position: absolute;
   transition: transform 0.5s ease, top 0.5s ease, bottom 0.5s ease;
 }
-
 .line:first-child {
   top: 40%;
 }
-
 .line:last-child {
   bottom: 40%;
 }
-
 .menu-button[aria-expanded='true'] .line:first-child {
   transform: rotate(-45deg);
   top: calc(50% - 1px);
 }
-
 .menu-button[aria-expanded='true'] .line:last-child {
   transform: rotate(45deg);
   bottom: calc(50% - 1px);
 }
-
 .nav-list {
   margin: 0;
   position: absolute;
@@ -219,34 +190,31 @@ p {
   transform-origin: top;
   transition: transform 400ms ease-in-out;
 }
-
 .nav-list.show {
   transform: scale(1, 1);
   background-color: var(--cream);
   z-index: 2;
+  min-width: 100vw;
+  padding-bottom: 1rem;
 }
-
 .nav-item {
   width: 100%;
   font-size: var(--font-size-3);
   opacity: 0;
   padding-right: var(--size-3);
 }
-
 .nav-list.show .nav-item {
   opacity: 1;
   transition: opacity 200ms ease-in-out 250ms;
 }
-
 .nav-item:last-child {
   padding-bottom: var(--size-3);
 }
-
 .nav-link {
   display: inline-block;
   width: 100%;
-  padding-top: var(--size-6);
-  padding-bottom: var(--size-6);
+  padding-top: var(--size-7);
+  padding-bottom: var(--size-7);
   /* Find difference between nav button's diagonal and its width. Use 0.5 of that value to bump links leftward to maintain alignment with the button when it's in an 'X' shape. Less awkard than translating the button itself rightward on transform. */
   padding-right: calc(
     (var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width)) / 2
@@ -254,11 +222,15 @@ p {
   cursor: pointer;
   transition: font-weight 200ms ease, font-style 200ms ease;
 }
-
 .nav-link:active,
 .nav-link:hover {
   font-weight: var(--font-weight-6);
   font-style: italic;
+}
+
+/* Slider Form */
+.hide-on-mobile {
+  display: none;
 }
 
 /* Footer */
@@ -271,20 +243,17 @@ p {
   flex-direction: column;
   align-items: center;
 }
-
 .footer h3 {
   font-size: var(--font-size-8);
   font-weight: var(--font-weight-1);
   font-style: italic;
   line-height: 0.8;
+  margin-bottom: .75rem;
   padding: var(--size-3) 0 var(--size-4);
 }
-
 .contact-form {
-  /* width: min(450px, 100%); */
   width: 100%;
 }
-
 .footer input,
 .footer textarea,
 .footer-button-submit {
@@ -294,8 +263,8 @@ p {
   color: var(--blue);
   font-size: var(--font-size-1);
 }
-
 .footer-button-submit {
+  margin-top: .5rem;
   margin-bottom: 0;
   background-color: var(--blue);
   color: var(--cream);
@@ -304,7 +273,6 @@ p {
   font-size: var(--font-size-3);
   cursor: pointer;
 }
-
 .footer-flex-row-container {
   margin: var(--size-8) 0 0;
   width: 100%;
@@ -312,61 +280,50 @@ p {
   display: flex;
   justify-content: space-between;
 }
-
 .sitemap h4 {
   font-size: 1.75rem;
   font-weight: var(--font-weight-00);
   font-style: italic;
-  /* border-bottom: 1px solid var(--cream); */
 }
-
 .sitemap a {
   display: block;
   text-decoration: none;
   color: var(--cream);
   margin-top: var(--size-3);
 }
-
 .sitemap a:hover {
   font-style: italic;
 }
-
 .footer-address-section {
   text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .footer-address-section address {
   font-style: normal;
   font-weight: var(--font-weight-1);
   margin-bottom: var(--size-3);
 }
-
 .footer .flex-row {
   display: flex;
   justify-content: end;
   align-items: center;
 }
-
 .phone-icon {
   width: 1.5em;
   height: auto;
   display: inline-block;
 }
-
 .footer-address-section a {
   display: inline-block;
   margin-left: 0.5em;
   text-decoration: none;
   color: var(--cream);
 }
-
 .footer-address-section a:hover {
   font-style: italic;
 }
-
 .footer-social-wrapper {
   /* width: min(400px, 100%); */
   width: 100%;
@@ -374,11 +331,9 @@ p {
   display: flex;
   justify-content: space-between;
 }
-
 .footer-social-link-item {
   display: inline-block;
 }
-
 .footer-social-button {
   border: 1px solid var(--cream);
   /* TODO: CHANGE ABOVE VAR TO HSLA TO BE LESS OPAQUE */
@@ -391,17 +346,14 @@ p {
   justify-content: center;
   align-items: center;
 }
-
 .footer-social-button:hover {
   border-color: hsla(44, 48%, 95%, 1);
   border-width: 2px;
 }
-
 .footer-social-svg {
   display: inline-block;
   max-width: 60%;
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -412,7 +364,6 @@ p {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
 .footer-fine-print {
   /* width: min(450px, 100%); */
   width: 100%;
@@ -420,7 +371,6 @@ p {
   justify-content: space-between;
   align-items: center;
 }
-
 .footer-fine-print p {
   font-family: var(--font-serif);
   font-style: italic;
@@ -430,7 +380,6 @@ p {
 
 /* Home */
 .home.grid {
-  /* margin-top: var(--size-8); */
   grid-auto-columns: 1fr;
   grid-template-areas:
     'intro'
@@ -445,16 +394,14 @@ p {
   text-align: center;
   padding: var(--size-4);
 }
-
 .intro-content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--size-8);
+  gap: var(--size-7);
   width: min(400px, 80%);
   margin: 0 auto;
 }
-
 .intro h1 {
   text-align: left;
   font-size: clamp(2.5rem, 14vw, 5.5rem);
@@ -462,33 +409,28 @@ p {
   line-height: var(--font-lineheight-00);
   letter-spacing: var(--font-letterspacing-0);
 }
-
 .headshot {
   width: min(90%, 400px);
   border-radius: 50%;
-  margin: 0 auto;
+  margin: .5rem auto 0;
 }
-
 .intro-text {
   text-transform: uppercase;
   font-size: var(--font-size-2);
   line-height: var(--font-lineheight-2);
 }
-
 .intro-heading-svg-wrapper {
   position: relative;
 }
-
 svg.squiggle {
   position: absolute;
-  top: 95%;
-  left: 64%;
-  width: 35%;
+  top: 100%;
+  left: 69%;
+  width: 34%;
   z-index: 1;
 
   transition: all 1s ease-in-out;
 }
-
 svg.squiggle path {
   stroke: var(--red);
   stroke-width: 3px;
@@ -501,11 +443,9 @@ svg.squiggle path {
   margin-bottom: var(--size-8);
   position: relative;
 }
-
 .sticky-heading-wrapper {
   padding-bottom: var(--size-5);
 }
-
 .projects-sticky-heading {
   line-height: var(--font-lineheight-00);
   text-align: center;
@@ -518,7 +458,6 @@ svg.squiggle path {
   top: 50vh;
   z-index: 1;
 }
-
 .project-card {
   width: min(350px, 90%);
   border: 1px solid var(--blue);
@@ -528,28 +467,22 @@ svg.squiggle path {
   position: relative;
   z-index: 5;
 }
-
 .project-card.left {
   margin-right: auto;
 }
-
 .project-card.right {
   margin: var(--size-10) 0 var(--size-10) auto;
 }
-
 .project-card.one {
   margin-top: var(--size-8);
 }
-
 .last-card {
   margin-top: -1.5rem;
 }
-
 .project-card-link-item {
   text-decoration: none;
   color: var(--blue);
 }
-
 .project-figure {
   display: flex;
   flex-direction: column;
@@ -557,7 +490,6 @@ svg.squiggle path {
   font-size: var(--font-size-3);
   text-transform: uppercase;
 }
-
 .project-thumbnail {
   margin-bottom: var(--size-8);
   width: 100%;
@@ -575,7 +507,6 @@ svg.squiggle path {
   justify-content: center;
   align-items: center;
 }
-
 .accordion h2 {
   line-height: var(--font-lineheight-00);
   text-align: center;
@@ -583,17 +514,14 @@ svg.squiggle path {
   font-weight: var(--font-weight-1);
   font-style: italic;
 }
-
 .details-wrapper {
   width: min(400px, 100%);
 }
-
 .details-item {
   padding: var(--size-6) 0;
   border-bottom: 1px solid var(--cream);
   font-size: var(--font-size-3);
 }
-
 .summary {
   list-style-type: none;
   cursor: pointer;
@@ -601,35 +529,28 @@ svg.squiggle path {
   justify-content: space-between;
   align-items: center;
 }
-
 summary::-webkit-details-marker {
   display: none;
 }
-
 .details-item:first-of-type .summary {
   border-top: 1px solid var(--cream);
   padding-top: var(--size-6);
 }
-
 .summary:hover {
   font-weight: var(--font-weight-6);
 }
-
 .plus-sign {
   width: 1.5em;
 }
-
 .summary-content {
   padding-top: var(--size-3);
   font-weight: var(--font-weight-3);
   letter-spacing: var(--font-letterspacing-1);
   line-height: var(--font-lineheight-2);
 }
-
 .summary-content a {
   color: var(--cream);
 }
-
 .summary-content a:hover {
   font-style: italic;
 }
@@ -666,14 +587,12 @@ summary::-webkit-details-marker {
   grid-area: cta;
   padding: var(--size-10) var(--size-4);
 }
-
 .cta-wrapper {
   /* border: 1px solid red; */
   margin: 0 auto;
   width: 90%;
   position: relative;
 }
-
 .cta-text {
   width: 100%;
   height: 100%;
@@ -682,19 +601,17 @@ summary::-webkit-details-marker {
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
-
 .cube-container {
   /* border: 1px solid blue; */
   position: absolute;
   /* TODO: Adjust positioning to keep cube centered responsively */
-  top: 35%;
-  left: 34%;
-  width: 30%;
-  height: 30%;
+  top: 30%;
+  left: 31%;
+  width: 25%;
+  height: 25%;
   perspective: 500px;
   animation: float-cube 3s var(--ease-in-out-3) 5;
 }
-
 .cube {
   /* border: 1px solid red; */
   position: relative;
@@ -703,22 +620,20 @@ summary::-webkit-details-marker {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(18%);
+  transform: rotate3d(-0.5, -1, 0.16, 45deg) translateX(18%);
 }
-
 .cube::after {
   content: '';
   position: absolute;
   bottom: -80%;
   background: rgba(43, 42, 42, 0.75);
-  width: 105%;
+  width: 100%;
   height: 110%;
   border-radius: 40%;
   filter: blur(10px);
   transform: rotateX(90deg);
   animation: shrink-shadow 3s var(--ease-in-out-3) 5;
 }
-
 .face {
   width: 100%;
   height: 100%;
@@ -731,36 +646,35 @@ summary::-webkit-details-marker {
   align-items: center;
   justify-content: center;
   font-size: var(--font-size-4);
+  /* antialiasing */
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  -webkit-perspective: 1000;
 }
-
 .face.front {
   transform: translateZ(50px);
   background-color: hsla(237, 41%, 35%, 1);
   /* background-color: hsl(359, 64%, 35%); */
 }
-
 .face.back {
-  transform: translateZ(-49px) rotateY(180deg);
+  transform: translateZ(-50%) rotateY(180deg);
 }
-
 .face.left {
-  transform: translateX(-49px) rotateY(-90deg);
+  transform: translateX(-50%) rotateY(-90deg);
 }
-
 .face.right {
-  transform: translateX(50px) rotateY(90deg);
+  transform: translateX(49%) rotateY(90deg);
   background-color: hsl(237, 41%, 55%);
 }
-
 .face.top {
-  transform: translateY(-50px) rotateX(90deg);
+  transform: translateY(-50%) rotateX(90deg);
   background-color: hsl(237, 41%, 70%);
 }
-
 .face.bottom {
-  transform: translateY(49px) rotateX(-90deg);
+  transform: translateY(50%) rotateX(-90deg);
 }
-
 /* Portfolio */
 .portfolio h1 {
   text-align: center;
@@ -770,7 +684,6 @@ summary::-webkit-details-marker {
   letter-spacing: var(--font-letterspacing-0);
   font-style: italic;
 }
-
 .portfolio .banner {
   margin: var(--size-8) -1em;
   padding-top: var(--size-4);
@@ -785,7 +698,6 @@ summary::-webkit-details-marker {
   /* position: relative;
   z-index: 2; */
 }
-
 /* .portfolio .banner::before {
   content: '';
   position: absolute;
@@ -797,16 +709,13 @@ summary::-webkit-details-marker {
   z-index: 0;
   background-color: var(--red);
 } */
-
 .banner-text {
   white-space: nowrap;
   animation: banner-scroll 10s linear infinite;
 }
-
 .banner-text::before {
   content: 'Portfolio\00A0\00B7';
 }
-
 .banner-text::after {
   content: '\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0Portfolio\00A0\00B7\00A0';
 }
@@ -825,7 +734,6 @@ summary::-webkit-details-marker {
   line-height: var(--font-lineheight-1);
   font-size: var(--font-size-3);
 }
-
 .portfolio {
   grid-auto-columns: 1fr;
   grid-template-areas:
@@ -836,15 +744,12 @@ summary::-webkit-details-marker {
 
   overflow: hidden;
 }
-
 .portfolio-h1 {
   grid-area: 'h1';
 }
-
 .project-one {
   grid-area: 'one';
 }
-
 .project-two {
   grid-area: 'two';
   background-color: var(--blue);
@@ -852,11 +757,9 @@ summary::-webkit-details-marker {
   /* padding-top: var(--size-8);
   padding-bottom: var(--size-8); */
 }
-
 .project-three {
   grid-area: 'three';
 }
-
 .project-section {
   padding: var(--size-fluid-6) var(--size-4);
 
@@ -864,71 +767,58 @@ summary::-webkit-details-marker {
   grid-template-columns: repeat(7, 1fr);
   gap: var(--size-3);
 }
-
 .project-heading-container {
   grid-column: 1 / 8;
   grid-row: 1 / 2;
   margin-bottom: var(--size-8);
 }
-
 .project-heading {
   font-size: var(--size-10);
   font-weight: var(--font-weight-6);
   line-height: 0.8;
 }
-
 .h2-line-left {
   display: block;
   text-align: left;
 }
-
 .h2-line-center {
   display: block;
   text-align: center;
 }
-
 .h2-line-right {
   display: block;
   text-align: right;
 }
-
 .project-summary-h3 {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
 }
-
 .project-h3 {
   font-family: var(--font-sans);
   font-size: var(--font-size-4);
   line-height: 1em;
 }
-
 .project-summary {
   grid-column: 3 / 8;
   grid-row: 2 / 3;
 }
-
 .project-img-main-container {
   grid-column: 1 / 8;
   margin-top: var(--size-6);
   margin-bottom: 0;
 }
-
 .project-img-main,
 .project-img-secondary {
   box-shadow: var(--shadow-2);
 }
-
 .project-link-container {
   grid-column: 1 / 8;
   /* margin-top: -.5em; */
   margin-bottom: var(--size-4);
 }
-
 .project-link-container h3 {
   margin-bottom: var(--size-2);
 }
-
 .project-link-item {
   display: inline-block;
 
@@ -937,11 +827,9 @@ summary::-webkit-details-marker {
   color: var(--blue);
   cursor: pointer;
 }
-
 .project-link-item:visited {
   color: var(--blue);
 }
-
 .project-two .project-link-item:visited {
   color: var(--cream);
 }
@@ -949,25 +837,20 @@ summary::-webkit-details-marker {
 .project-link-item:hover {
   font-style: italic;
 }
-
 /* TODO: Shift layout of Toolbox on mobile to reflect summary layout */
 .project-toolbox {
   grid-column: 3 / 8;
 }
-
 .project-toolbox h3,
 .project-lessons h3 {
   margin-bottom: var(--size-2);
 }
-
 .project-img-secondary-container {
   grid-column: 1 / 8;
 }
-
 .project-img-secondary {
   margin: var(--size-4) 0;
 }
-
 .project-lessons {
   grid-column: 1 / 8;
 }
@@ -981,11 +864,12 @@ summary::-webkit-details-marker {
   /* TODO: Make Responsive Layout. MAX WIDTH SET TO RESTRICT TO MOBILE DESIGN FOR MIDTERM ONLY */
   max-width: 500px;
 }
-
 .about-h1 {
   /* grid-column: span 12; */
   max-width: 500px;
   grid-column: 1 / 12;
+  margin-top: 1rem;
+
   font-weight: var(--font-weight-1);
   text-transform: uppercase;
   text-align: left;
@@ -994,14 +878,12 @@ summary::-webkit-details-marker {
   line-height: 0.85;
   letter-spacing: var(--font-letterspacing-0);
 }
-
 .square {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
   /* grid-column: span 12; */
 }
-
 .square-section-content {
   position: absolute;
   width: 100%;
@@ -1014,67 +896,37 @@ summary::-webkit-details-marker {
   justify-content: space-between;
   padding: var(--size-5);
 }
-
 .about-one {
   background-color: var(--blue);
   color: var(--cream);
 }
-
 .about-two,
 .about-three,
 .about-four {
   border: 1px solid var(--blue);
 }
-
 .about-one,
 .about-three {
   grid-column: 1 / 11;
 }
-
 .about-two,
 .about-four {
   grid-column: 3 / 13;
 }
-
 .about-h2 {
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-1);
   text-transform: uppercase;
 }
-
 .square p {
   font-weight: var(--font-weight-1);
 }
-
 .about-one a {
   color: var(--cream);
 }
-
 .square a:hover {
   font-style: italic;
 }
-
-/* TODO: Dx issue with this animation */
-/* .wavy {
-  position: relative;
-  border: 1px solid red;
-}
-
-@keyframes bounce {
-  25% {
-    transform: translateY(-25%);
-  }
-  40% {
-    transform: translateY(-3%);
-  }
-  0%, 60%, 100% {
-    transform: translateY(0);
-  }
-}
-
-.ch1 {
-  animation: bounce 5s infinite;
-} */
 
 @media (min-width: 472px) {
   .about-one,
@@ -1121,6 +973,9 @@ button:hover {
 @media (min-width: 600px) {
   .mobile {
     display: none;
+  }
+  .hide-on-mobile {
+    display: block;
   }
 
   /* Tablet: Header */
@@ -1213,7 +1068,7 @@ button:hover {
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 100%; 
+    width: 100%;
     height: 100vh;
     padding: 1rem;
     background-color: var(--blue);
@@ -1242,7 +1097,8 @@ button:hover {
     border: 2px solid var(--cream);
     border-radius: 50%;
   }
-  .slider-close-btn:hover, .slider-submit:hover {
+  .slider-close-btn:hover,
+  .slider-submit:hover {
     background-color: var(--cream);
     color: var(--blue);
     cursor: pointer;
@@ -1251,7 +1107,7 @@ button:hover {
     grid-column: 3 / 11;
     grid-row: 1 / 3;
     font-size: 6rem;
-    
+
     font-weight: var(--font-weight-1);
     font-style: italic;
     line-height: 0.8;
@@ -1276,7 +1132,7 @@ button:hover {
     margin-bottom: 1.5rem;
     padding: 0.5em;
     border: none;
-    border-radius: .25em;
+    border-radius: 0.25em;
     font-size: 1.25rem;
   }
   .slider-submit {
@@ -1437,17 +1293,6 @@ button:hover {
   }
 
   /* Tablet: Portfolio */
-
-  /* Portfolio page */
-  /* Project One */
-  /* .project-intro {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-areas:
-      'img h2'
-      'img summary';
-  } */
-
   .portfolio .banner {
     margin-top: 6rem;
   }
@@ -1577,7 +1422,7 @@ button:hover {
     grid-column: 6 / 10;
   }
 
-  /* About */
+  /* Tablet: About */
   .about.grid {
     max-width: 100%;
     padding: 6rem 4rem;
@@ -1589,6 +1434,7 @@ button:hover {
   .about-h1 {
     grid-column: 1 / 5;
     max-width: 100%;
+    margin-top: 0;
   }
   .about-h2 {
     line-height: 2rem;
@@ -1600,23 +1446,23 @@ button:hover {
     line-height: 1.75rem;
   }
   .about-one {
-    grid-column: 5 / 9;
+    grid-column: 6 / 13;
     grid-row: 1 / 2;
     background-color: var(--cream);
     color: var(--blue);
     border: 1px solid var(--blue);
   }
   .about-two {
-    grid-column: 9 / 13;
-    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    grid-row: 2 / 3;
   }
   .about-three {
-    grid-column: 5 / 9;
-    grid-row: 2 / 3;
+    grid-column: 3 / 10;
+    grid-row: 3 / 4;
   }
   .about-four {
-    grid-column: 1 / 5;
-    grid-row: 2 / 3;
+    grid-column: 6 / 13;
+    grid-row: 4 / 5;
   }
   .square,
   .square a:visited {
@@ -1635,8 +1481,11 @@ button:hover {
   .mobile {
     display: none;
   }
+  .nav-bar {
+    padding: 1rem 0;
+  }
 
-  /* Desketop: Header */
+  /* Desktop: Header */
   .header {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -1665,6 +1514,7 @@ button:hover {
   }
   .nav-item:last-child {
     padding: 0;
+    padding-right: 0;
   }
   .nav-link {
     width: auto;
@@ -1693,7 +1543,10 @@ button:hover {
   .slider-form h3 {
     margin-top: 2rem;
   }
-  .slider-form h3, .slider-form-intro, .slider-form-inputs, .slider-submit {
+  .slider-form h3,
+  .slider-form-intro,
+  .slider-form-inputs,
+  .slider-submit {
     grid-column: 4 / 10;
     max-width: 800px;
   }
@@ -1741,8 +1594,8 @@ button:hover {
     line-height: 2.25rem;
   }
   svg.squiggle {
-    top: min(105%, 250px);
-    left: min(110%, 40vw);
+    top: min(108%, 260px);
+    left: min(110%, 41vw);
     width: min(200px, 30%);
     transform: rotate(-90deg);
   }
@@ -1980,22 +1833,23 @@ button:hover {
   }
 
   /* Desktop: About */
-  .about.grid {
+  /* .about.grid {
     max-width: 100%;
     padding: 6rem 4rem;
     gap: 2rem;
-  }
-  .about a:visited {
+  } */
+  /* .about a:visited {
     color: var(--blue);
-  }
+  } */
   .about-h1 {
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
     max-width: 100%;
+    font-size: 6rem;
     /* text-align: end; */
   }
   .about-h2 {
     line-height: 2rem;
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   .about p {
     font-weight: 300;
@@ -2003,23 +1857,23 @@ button:hover {
     line-height: 1.75rem;
   }
   .about-one {
-    grid-column: 5 / 9;
+    grid-column: 7 / 13;
     grid-row: 1 / 2;
     background-color: var(--cream);
     color: var(--blue);
     border: 1px solid var(--blue);
   }
   .about-two {
-    grid-column: 9 / 13;
-    grid-row: 1 / 2;
+    grid-column: 1 / 7;
+    grid-row: 2 / 3;
   }
   .about-three {
-    grid-column: 5 / 9;
+    grid-column: 7 / 13;
     grid-row: 2 / 3;
   }
   .about-four {
-    grid-column: 1 / 5;
-    grid-row: 2 / 3;
+    grid-column: 1 / 7;
+    grid-row: 3 / 4;
   }
   .square,
   .square a:visited {
@@ -2032,21 +1886,63 @@ button:hover {
   }
 }
 
+@media (min-width: 1200px) {
+  /* LG: About */
+  .about p {
+    font-size: 1.15rem;
+    line-height: 1.5rem;
+  }
+  .about h1 {
+    grid-column: 1 / 5;
+  }
+  .about-one {
+    grid-column: 5 / 9;
+  }
+  .about-two {
+    grid-column: 5 / 9;
+  }
+  .about-three {
+    grid-column: 9 / 13;
+  }
+  .about-four {
+    grid-column: 9 / 13;
+  }
+}
+
 @media (min-width: 1600px) {
   /* XL */
-  .nav-bar, .intro, .home-projects, .accordion, .cta, .slider-form, .project-one, .project-two, .project-three, .footer {
+  .nav-bar, .header, 
+  .intro,
+  .home-projects,
+  .accordion,
+  .cta,
+  .slider-form,
+  .project-one,
+  .project-two,
+  .project-three,
+  .footer, .about.grid {
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
   }
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* XL: Home */
   .intro-text {
     align-self: center;
     margin-right: 15%;
     margin-bottom: 10%;
   }
   svg.squiggle {
-    top: 115%;
+    top: 120%;
+    left: 83%;
     width: 30%;
+  }
+  .headshot {
+    max-width: 550px;
   }
   .cube-container {
     width: 250px;
@@ -2057,7 +1953,8 @@ button:hover {
   .face.front {
     transform: translateZ(100px);
   }
-  /* This section fills in sides of blue background sections after the XL content width constraint creates gaps */
+
+  /* Fills in sides of blue background sections after the XL content width constraint creates gaps */
   body {
     overflow-x: hidden;
   }
@@ -2067,7 +1964,8 @@ button:hover {
   .footer {
     position: relative;
   }
-  .project-two::before, .footer::before {
+  .project-two::before,
+  .footer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -2076,6 +1974,24 @@ button:hover {
     width: 200%;
     height: 100%;
     z-index: -1;
+  }
+
+  /* XL: About */
+  .about p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .about-one {
+    grid-column: 9 / 13;
+  }
+  .about-two {
+    grid-column: 1 / 5;
+  }
+  .about-three {
+    grid-column: 5 / 9;
+  }
+  .about-four {
+    grid-row: 2 / 3;
   }
 }
 
