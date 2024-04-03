@@ -2,7 +2,7 @@
 
 This is a site built to showcase my web development and design skills.
 
-[Live site on WTCC server](https://wcet.waketech.edu/abthomas3/web287/Projects/Portfolio/index.html)
+[Live site](https://tessthomas.com)
 
 ![Home page intro](/public/assets/home-snip.png)
 
@@ -14,7 +14,7 @@ Vite's dev server is awesome. I think I'll stick to it for the second iteration 
 
 ---
 
-### Midterm Prototype Checklist
+### First Prototype Checklist
 
 - [x] Intro
 - [x] Contact information
@@ -40,7 +40,7 @@ Vite's dev server is awesome. I think I'll stick to it for the second iteration 
 - [ ] 2 more portfolio pieces (BarKey, new CRUD ops app)
 - [ ] Reformulate size/type system (maybe replace Open Props `--size-n` properties)
 - [ ] FIX: Cube displays right of center on actual mobile devices vs browser emulation
-- [ ] FIX: Dropdown nav menu not at full width due to body constraint for midterm submission.
+- [x] FIX: Dropdown nav menu not at full width due to body constraint for midterm submission.
 - [ ] FIX: Swap Tops'l images index.html#projects vs `portfolio.html`.
 - [ ] FIX: Resume overflow from PDF embed on true mobile devices.
 - [ ] Add JS API solution for scroll based events so cube not animating from page load.
@@ -52,7 +52,8 @@ Vite's dev server is awesome. I think I'll stick to it for the second iteration 
 
 ## Deployment
 
-WTCC Server through May 2024, future hosting TBD.
+WTCC Server through March 2024
+Deployed Netlify 04/02/24
 
 ---
 
@@ -61,7 +62,7 @@ WTCC Server through May 2024, future hosting TBD.
 - [OpenProps](https://open-props.style/) - Lightweight CSS Framework used for it's incrementally adoptable custom properties. I've been curious about this framework for a while because it's so light and customizable. I can use the props that I find helpful, not need to worry about fighting their specificity or clogging up my HTML with a ton of Bootstrap-y classes, and only ship the props I use. Thus far it's been simple to install, configure, and integrate with my own CSS.
 - [Vite.js](https://vitejs.dev/guide/) - Build tool selected for its lightning fast dev server and out-of-the-box PostCSS support, which was needed in order to leverage OpenProps' PostCSS (Just In Time) Props.
 - [FileZilla](https://filezilla-project.org/) - To upload Vite-built `dist/` contents to the school server.
-- [FORM_TOOL_HERE](#) - TODO: CITE FORM TOOL HERE WHEN DECIDED UPON.
+- [FORM_TOOL_HERE](#) - TODO: NOTE AFTER IMPLEMENTING NETLIFY SERVERLESS FUNCTIONS
 
 ---
 
