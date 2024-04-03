@@ -52,8 +52,8 @@ Vite's dev server is awesome. I think I'll stick to it for the second iteration 
 
 ## Deployment
 
-WTCC Server through March 2024
-Deployed Netlify 04/02/24
+- WTCC Server through March 2024
+- Deployed Netlify 04/02/24
 
 ---
 
@@ -75,5 +75,4 @@ Deployed Netlify 04/02/24
 
 ## License
 
-TODO: Actually implement below license
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
