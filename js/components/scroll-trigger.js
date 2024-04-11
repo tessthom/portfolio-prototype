@@ -1,9 +1,3 @@
-// .cube-container is target el
-
-// When the amount of a target el which is visible within the root element crosses one of the visibility thresholds, the IntersectionObserver object's callback is executed. 
-
-// Each entry in the list of thresholds is an IntersectionObserverEntry object describing one threshold that was crossed; that is, each entry describes how much of a given element is intersecting with the root element, whether or not the element is considered to be intersecting or not, and the direction in which the transition occurred.
-
 function scrollTrigger(selector, options = {}) {
   // nodeList of elements with scroll-triggered animations
   let els = document.querySelectorAll(selector);

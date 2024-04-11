@@ -1,4 +1,5 @@
 const openBtn = document.querySelector('.footer-button-submit');
+const introOpenBtn = document.querySelector('.intro-btn');
 const closeBtn = document.querySelector('.slider-close-btn');
 const submitBtn = document.querySelector('.slider-submit');
 
@@ -10,5 +11,6 @@ function toggleSlider() {
 }
 
 openBtn.addEventListener('click', toggleSlider);
+introOpenBtn.addEventListener('click', toggleSlider);
 closeBtn.addEventListener('click', toggleSlider);
 submitBtn.addEventListener('click', toggleSlider);
