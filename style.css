@@ -848,15 +848,8 @@ summary::-webkit-details-marker {
 .project-toolbox {
   grid-column: 3 / 8;
 }
-.project-toolbox h3,
-.project-lessons h3 {
-  /* margin-bottom: var(--size-2); */
-}
 .project-img-secondary-container {
   grid-column: 1 / 8;
-}
-.project-img-secondary {
-  /* margin: var(--size-4) 0; */
 }
 .project-lessons {
   grid-column: 1 / 8;
