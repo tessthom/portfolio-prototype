@@ -595,13 +595,18 @@ summary::-webkit-details-marker {
 .cta-text {
   width: 100%;
   height: 100%;
+  /* animation-name: rotate-circle;
+  animation-duration: 20s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear; */
+}
+.cta-text.active {
   animation-name: rotate-circle;
   animation-duration: 20s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 .cube-container {
-  /* border: 1px solid blue; */
   position: absolute;
   /* TODO: Adjust positioning to keep cube centered responsively */
   top: 30%;
@@ -609,6 +614,9 @@ summary::-webkit-details-marker {
   width: 25%;
   height: 25%;
   perspective: 500px;
+  /* animation: float-cube 3s var(--ease-in-out-3) 5; */
+}
+.cube-container.active {
   animation: float-cube 3s var(--ease-in-out-3) 5;
 }
 .cube {
@@ -631,6 +639,9 @@ summary::-webkit-details-marker {
   border-radius: 40%;
   filter: blur(10px);
   transform: rotateX(90deg);
+  /* animation: shrink-shadow 3s var(--ease-in-out-3) 5; */
+}
+.cube-container.active .cube::after {
   animation: shrink-shadow 3s var(--ease-in-out-3) 5;
 }
 .face {
@@ -691,17 +702,6 @@ summary::-webkit-details-marker {
   width: 110%;
   transform: rotate(-5deg);
 }
-/* .portfolio .banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(3rem + var(--size-8));
-  transform: rotate(10deg);
-  z-index: 0;
-  background-color: var(--red);
-} */
 .banner-text {
   white-space: nowrap;
   animation: banner-scroll 10s linear infinite;
@@ -1257,6 +1257,19 @@ button:hover {
     height: auto;
     transform: rotate(-75deg);
   }
+  .intro-btn {
+    margin-top: 2em;
+    padding: .5em 1.5em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2em;
+    color: var(--cream);
+    background-color: var(--blue);
+
+    font-size: var(--font-size-3);
+    cursor: pointer;
+  }
+  
 
   /* Tablet: Home - Projects */
   .home-projects {
