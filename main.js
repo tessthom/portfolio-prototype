@@ -1,11 +1,12 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 import './js/components/navbar.js';
 import './js/components/squiggle.js';
 import './js/components/contact.js';
 import './js/components/scroll-trigger.js';
+
+// import javascriptLogo from './javascript.svg'
+// import viteLogo from '/vite.svg'
+// import { setupCounter } from './counter.js'
 
 // document.querySelector('#app').innerHTML = `
 //   <div>

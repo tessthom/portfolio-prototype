@@ -1,3 +1,4 @@
+console.log('contact script is running');
 const openBtn = document.querySelector('.footer-button-submit');
 const introOpenBtn = document.querySelector('.intro-btn');
 const closeBtn = document.querySelector('.slider-close-btn');
@@ -10,7 +11,10 @@ function toggleSlider() {
   sliderForm.classList.toggle('show');
 }
 
+if (introOpenBtn) {
+  introOpenBtn.addEventListener('click', toggleSlider);
+}
+
 openBtn.addEventListener('click', toggleSlider);
-introOpenBtn.addEventListener('click', toggleSlider);
 closeBtn.addEventListener('click', toggleSlider);
 submitBtn.addEventListener('click', toggleSlider);
