@@ -861,8 +861,7 @@ summary::-webkit-details-marker {
   grid-template-columns: repeat(12, 1fr);
   row-gap: var(--size-fluid-4);
   margin-bottom: var(--size-fluid-6);
-  /* TODO: Make Responsive Layout. MAX WIDTH SET TO RESTRICT TO MOBILE DESIGN FOR MIDTERM ONLY */
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 .about-h1 {
   max-width: 500px;
@@ -1191,8 +1190,6 @@ button:hover {
     grid-column: 1 / 6;
     grid-row: 1 / 3;
     align-self: end;
-
-    /* margin-bottom: 1.5rem; */
   }
   .headshot-wrapper {
     grid-column: 6 / 13;
@@ -1248,7 +1245,7 @@ button:hover {
     padding-bottom: 0;
   }
   .projects-sticky-heading {
-    font-size: 15vw;
+    font-size: 18vw;
     line-height: 10vw;
     letter-spacing: 0.05em;
   }
@@ -1334,6 +1331,7 @@ button:hover {
   }
   .portfolio .banner {
     margin-bottom: var(--size-4);
+    padding-top: var(--size-6);
   }
   .banner-text {
     animation: banner-scroll 15s linear infinite;
