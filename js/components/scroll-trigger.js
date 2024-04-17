@@ -21,15 +21,16 @@ function addObserver(el, options) {
         // lets me pass a custom callback fn to scrollTrigger if future behavior requires some operation that can't be performed with just CSS
         if (options.cb) {
           // accounts for ability to pass a callback if we want
-          options.cb(el)
+          // options.cb(el)
+          options.cb(el, entry);
         } else {
           // toggle active class
           console.log(`${entry.target} is getting active class now.`);
           entry.target.classList.add('active');
         }
         // remove observer after class added
-        observer.unobserve(entry.target);
-      }
+        // observer.unobserve(entry.target);
+      } 
     });
   }, options); // pass options object to observer
   // add observer to the element
@@ -43,6 +44,24 @@ scrollTrigger('.cube-container', {
 scrollTrigger('.cta-text', {
   rootMargin: '-25%'
 });
+// scrollTrigger('.projects-sticky-heading', {
+//   threshold: Array.from({length: 11}, (_, i) => i / 10),
+//   cb: (el, entry) => {
+//     el.style.opacity = entry.intersectionRatio;
+//   }
+// });
+
+// scrollTrigger('.projects-sticky-heading', {
+//   cb: (el, entry) => {
+//     let opacity;
+//     if (entry.boundingClientRect.y >= 0) {
+//       opacity = 1 - entry.intersectionRatio;
+//     } else {
+//       opacity = entry.intersectionRatio;
+//     }
+//     el.style.opacity = opacity;
+//   }
+// });
 
 /*
 The custom callback function in the scrollTrigger function can be used to perform any JavaScript operation when an element comes into view. Examples for future iterations:

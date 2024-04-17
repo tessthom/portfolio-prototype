@@ -441,6 +441,17 @@ svg.squiggle path {
   padding: var(--size-4);
   margin-bottom: var(--size-8);
   position: relative;
+
+  max-width: 100%;
+
+  background-color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -8rem -10%;
+    background: var(--blue);
+  }
 }
 .sticky-heading-wrapper {
   padding-bottom: var(--size-5);
@@ -448,20 +459,45 @@ svg.squiggle path {
 .projects-sticky-heading {
   line-height: var(--font-lineheight-00);
   text-align: center;
-  font-size: clamp(3rem, 20vw, 5.5rem);
+  /* font-size: clamp(3rem, 20vw, 5.5rem); */
+  margin-top: 3rem;
+  font-size: 18vw;
+  color: var(--cream);
+  /* font-family: 'Cormorant Garamond'; */
+  /* font-weight: 100; */
+  width: 100%;
+  border: 1px solid red;
   font-weight: var(--font-weight-1);
-  font-style: italic;
+  /* font-style: italic; */
   text-transform: uppercase;
 
   position: sticky;
   top: 50vh;
   z-index: 1;
+
+  animation: fade-out linear;
+  animation-timeline: scroll(nearest block);
+}
+/* Sticky header animation */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: .5;
+  }
 }
 .project-card {
   width: min(350px, 90%);
-  border: 1px solid var(--blue);
-  padding: var(--size-4);
-  background-color: var(--cream);
+  border: 1px solid var(--cream);
+  padding: 1.5rem;
+  background-color: var(--blue);
 
   position: relative;
   z-index: 5;
@@ -488,9 +524,10 @@ svg.squiggle path {
   justify-content: space-between;
   font-size: var(--font-size-3);
   text-transform: uppercase;
+  color: var(--cream);
 }
 .project-thumbnail {
-  margin-bottom: var(--size-8);
+  margin-bottom: 4rem;
   width: 100%;
   height: auto;
 }
@@ -1000,7 +1037,6 @@ button:hover {
     overflow: hidden;
     background-color: var(--cream);
     z-index: -1;
-    border: 1px solid red;
   }
   .nav-item {
     padding-right: 0;
