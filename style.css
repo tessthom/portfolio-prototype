@@ -445,16 +445,6 @@ svg.squiggle path {
   max-width: 100%;
 
   background-color: transparent;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -6rem -4rem;
-    background: var(--blue);
-    max-width: 100vw;
-    margin: 0 auto;
-    overflow:hidden;
-  }
 }
 .sticky-heading-wrapper {
   padding-bottom: var(--size-5);
@@ -463,9 +453,8 @@ svg.squiggle path {
   line-height: var(--font-lineheight-00);
   text-align: center;
   /* font-size: clamp(3rem, 20vw, 5.5rem); */
-  margin-top: 3rem;
-  font-size: 18vw;
-  color: var(--cream);
+  /* margin-top: 3rem; */
+  font-size: 20vw;
   /* font-family: 'Cormorant Garamond'; */
   /* font-weight: 100; */
   width: 100%;
@@ -497,10 +486,12 @@ svg.squiggle path {
   }
 }
 .project-card {
-  width: min(350px, 90%);
-  border: 1px solid var(--cream);
-  padding: 1.5rem;
-  background-color: var(--blue);
+  margin: 6rem auto;
+  max-width: 90%;
+  border: 1px solid var(--blue);
+  padding: 1rem;
+  background-color: var(--cream);
+  color: var(--blue);
 
   position: relative;
   z-index: 5;
@@ -509,13 +500,21 @@ svg.squiggle path {
   margin-right: auto;
 }
 .project-card.right {
-  margin: var(--size-10) 0 var(--size-10) auto;
+  margin-left: auto;
+  margin-right: 0;
 }
 .project-card.one {
-  margin-top: var(--size-8);
+  margin: 2rem auto 4rem 0;
+  width: 75%;
+}
+.project-card.three {
+  margin-left: 20%;
+  margin-right: auto;
+  width: 70%;
 }
 .last-card {
-  margin-top: -1.5rem;
+  margin-top: -2rem;
+  margin-bottom: 0;
 }
 .project-card-link-item {
   text-decoration: none;
@@ -527,10 +526,9 @@ svg.squiggle path {
   justify-content: space-between;
   font-size: var(--font-size-3);
   text-transform: uppercase;
-  color: var(--cream);
 }
 .project-thumbnail {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   width: 100%;
   height: auto;
 }
@@ -595,7 +593,6 @@ summary::-webkit-details-marker {
 }
 
 /* Home - CTA Section */
-/* TODO: Leverage JS Intersection Observer API to only run these when elements come into view */
 
 /* Animations for CTA */
 @keyframes rotate-circle {
@@ -606,13 +603,11 @@ summary::-webkit-details-marker {
     transform: rotate(-360deg);
   }
 }
-
 @keyframes float-cube {
   50% {
     transform: translateY(-25%);
   }
 }
-
 /* push down an extra 35% to neutralize float animation bobbing shadow up and down */
 @keyframes shrink-shadow {
   50% {
@@ -1052,6 +1047,7 @@ button:hover {
     gap: 1rem;
 
     padding: 5rem 3rem;
+    min-height: 100vh;
   }
   .contact-form {
     grid-column: 1 / 13;
@@ -1205,7 +1201,7 @@ button:hover {
   .home {
     grid-template-rows: repeat(4, auto);
     column-gap: 1.25rem; /* 20px gutter */
-    row-gap: 8rem;
+    /* row-gap: 6rem; */
   }
   .intro {
     padding: 0 3rem;
@@ -1262,14 +1258,14 @@ button:hover {
   }
   .intro-btn {
     margin-top: 1.75em;
-    padding: .5em 1.5em;
+    padding: .75em 2em;
     text-transform: uppercase;
     border: none;
     border-radius: 2em;
     color: var(--cream);
     background-color: var(--blue);
 
-    font-size: var(--font-size-3);
+    font-size: 1.25rem;
     cursor: pointer;
   }
   .intro-btn:hover {
@@ -1278,36 +1274,153 @@ button:hover {
 
   /* Tablet: Home - Projects */
   .home-projects {
-    padding: 0 3rem;
+    padding: 6rem 1rem;
+    margin-bottom: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      max-width: 100vw;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: var(--blue);
+    }
   }
   .sticky-heading-wrapper {
+    margin-bottom: 0;
     padding-bottom: 0;
   }
   .projects-sticky-heading {
-    font-size: 18vw;
-    line-height: 10vw;
+    font-size: 18dvw;
+    /* line-height: 10vw; */
     letter-spacing: 0.05em;
+    color: var(--cream);
   }
   .project-card {
     width: min(500px, 70%);
+    padding: 1.5rem;
+    border-color: var(--cream);
+    background-color: var(--blue);
+  }
+  .project-figure {
+    color: var(--cream);
   }
   .project-card.one {
-    width: 55%;
+    width: 350px;
   }
   .project-card.two {
-    width: 80%;
+    width: 450px;
+  }
+  .project-card.three {
+    width: 400px;
+  }
+  .project-card.left {
+    margin-right: auto;
+    margin-left: 2rem;
+  }
+  .project-card.right {
+    /* margin: -5vw 0 0 auto; */
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+  .last-card {
+    margin-top: 6rem;
   }
 
   /* Tablet: Home - Accordion */
   .accordion {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 6rem 3rem;
+    background-color: var(--cream);
+    color: var(--blue);
   }
   .accordion h2 {
     font-size: 6rem;
+    background-color: var(--cream);
+    /* z-index: 999; */
   }
   .details-wrapper {
-    width: 60%;
+    width: 65%;
+    background-color: var(--cream);
+  }
+  .details-item {
+    border-color: var(--blue);
+    /* background-color: transparent; */
+    background-color: var(--cream);
+    /* position: relative; */
+    /* height: auto; */
+
+    /* &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      background-color: pink;
+      z-index: -1;
+    } */
+  }
+  .details-item:first-of-type .summary {
+    border-color: var(--blue);
+  }
+  .summary {
+    background-color: var(--cream);
+    /* background-color: transparent; */
+    color: var(--blue);
+    cursor: pointer;
+    width: 100%;
+    /* z-index: 100; */
+  }
+  /* .summary-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms ease-out;
+  }
+  details[open] > .summary-content {
+    grid-template-rows: 1fr;
+  } */
+  .summary-content {
+    overflow: hidden;
+  }
+  /* details[open] > .summary {
+    position: absolute;
+    padding-bottom: 1.75rem;
+    background-color: var(--cream);
+    z-index: 999;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1.75rem;
+      width: 100%;
+      height: 1.75rem;
+      background-color: #ecbfbf;
+    }
+  } */
+  /* details[open] > .summary-content {
+    margin-top: 5rem;
+    padding-top: 0;
+    background-color: transparent;
+    overflow: hidden;
+    animation: expand 1s ease-in-out;
+    z-index: 5;
+  } */
+  .summary-content a {
+    color: var(--blue);
+  }
+  .summary-content {
+    overflow: hidden;
+    /* z-index: 5; */
+  }
+  @keyframes expand {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 
   /* Tablet: Home - CTA */
@@ -1720,7 +1833,7 @@ button:hover {
   /* Desktop: Home - Projects */
   .projects-sticky-heading {
     font-size: 15vw;
-    line-height: 10vw;
+    /* line-height: 10vw; */
   }
   .project-card {
     width: min(500px, 80%);
