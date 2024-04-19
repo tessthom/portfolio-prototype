@@ -124,6 +124,13 @@ h6,
   padding-top: var(--size-6);
   padding-bottom: var(--size-6);
 }
+.scroller {
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+.snapper {
+  scroll-snap-align: start;
+}
 
 /* Components */
 /* Navbar */
@@ -625,10 +632,19 @@ summary::-webkit-details-marker {
   margin: 0 auto;
   width: 90%;
   position: relative;
+
+  /* try to use grid to center cube instead of absolute */
+  border: 1px solid red;
+  display: grid;
+  grid-template-areas: 'stack';
+  justify-items: center;
+  align-items: center;
 }
 .cta-text {
   width: 100%;
   height: 100%;
+
+  grid-area: stack;
 }
 .cta-text.active {
   animation-name: rotate-circle;
@@ -637,14 +653,19 @@ summary::-webkit-details-marker {
   animation-timing-function: linear;
 }
 .cube-container {
-  position: absolute;
+  /* position: absolute; */
   /* TODO: Adjust positioning to keep cube centered responsively */
-  top: 30%;
-  left: 31%;
+  /* top: 30%; */
+  /* left: 31%; */
   width: 25%;
   height: 25%;
   perspective: 500px;
   /* animation: float-cube 3s var(--ease-in-out-3) 5; */
+
+  /* try to use grid to center cube instead of absolute */
+  border: 1px solid green;
+  grid-area: stack;
+  position: relative; /*???*/
 }
 .cube-container.active {
   animation: float-cube 3s var(--ease-in-out-3) 5;
@@ -652,12 +673,12 @@ summary::-webkit-details-marker {
 .cube {
   /* border: 1px solid red; */
   position: relative;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotate3d(-0.5, -1, 0.16, 45deg) translateX(18%);
+  transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(5%);
 }
 .cube::after {
   content: '';
@@ -728,7 +749,8 @@ summary::-webkit-details-marker {
   background-color: var(--blue);
   color: var(--cream);
 
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
   width: 110%;
   transform: rotate(-5deg);
 }
@@ -765,7 +787,8 @@ summary::-webkit-details-marker {
     'two'
     'three';
 
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 .portfolio-h1 {
   grid-area: 'h1';
@@ -1435,16 +1458,19 @@ button:hover {
   .cta-wrapper {
     grid-column: 2 / 12;
   }
-  .cube-container {
-    width: 200px;
-    height: 200px;
-    top: 33%;
-    left: 34%;
-  }
+  /* .cube-container { */
+    /* width: 200px; */
+    /* height: 200px; */
+    /* width: 25%;
+    height: 25%; */
+    /* top: 33%; */
+    /* left: 34%; */
+  /* } */
   .cube {
-    width: 80%;
-    height: 80%;
+    /* width: 80%; */
+    /* height: 80%; */
     transform-style: preserve-3d;
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-2%);
   }
   .face {
     outline: 1px solid transparent;
@@ -1457,7 +1483,6 @@ button:hover {
   }
   .face.top {
     transform: translateY(-50%) rotateX(90deg);
-    outline: 1px solid transparent;
   }
   .face.bottom {
     transform: translateY(50%) rotateX(-90deg);
@@ -1468,12 +1493,12 @@ button:hover {
   .face.right {
     transform: translateX(50%) rotateY(90deg);
   }
-  .face.front {
-    transform: translateZ(79px);
-  }
-  .face.back {
+  /* .face.front {
+    transform: translateZ(50);
+  } */
+  /* .face.back {
     transform: translateZ(-80px) rotateY(180deg);
-  }
+  } */
 
   /* Tablet: Portfolio */
   .project-link-item {
@@ -1641,6 +1666,21 @@ button:hover {
 }
 
 @media (min-width: 750px) {
+  /* Cube CTA */
+  .cube-container {
+    margin-bottom: 5%;
+  }
+  .cube {
+    width: 8rem;
+    height: 8rem;
+  }
+  .face {
+    border: 1px solid transparent;
+  }
+  .face.front {
+    transform: translateZ(4rem);
+  }
+
   /* About */
   .about.grid {
     padding: 6rem 4rem;
@@ -1886,40 +1926,11 @@ button:hover {
     grid-column: 1 / 8;
   }
   .cube-container {
-    width: 200px;
-    height: 200px;
-    top: 33%;
-    left: 33%;
+    margin-bottom: 10%;
   }
   .cube {
-    width: 80%;
-    height: 80%;
     transform-style: preserve-3d;
-  }
-  .face {
-    outline: 1px solid transparent;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    will-change: transform;
-    perspective: 1000;
-    -webkit-perspective: 1000;
-  }
-  .face.top {
-    transform: translateY(-50%) rotateX(90deg);
-    outline: 1px solid transparent;
-  }
-  .face.bottom {
-    transform: translateY(50%) rotateX(-90deg);
-  }
-  .face.left {
-    transform: translateX(-50%) rotateY(-90deg);
-  }
-  .face.right {
-    transform: translateX(50%) rotateY(90deg);
-  }
-  .face.front {
-    transform: translateZ(79px);
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-8%);
   }
   .face.back {
     transform: translateZ(-80px) rotateY(180deg);
@@ -1944,7 +1955,8 @@ button:hover {
   .project-two::after {
     content: '';
     position: absolute;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-x: hidden;
     top: 0;
     left: -50%;
     width: 200%;
@@ -2186,6 +2198,15 @@ button:hover {
 }
 
 @media (min-width: 1200px) {
+  /* LG: Home - Cube CTA */
+  .cube {
+    width: 12rem;
+    height: 12rem;
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-4%);
+  }
+  .face.front {
+    transform: translateZ(6rem);
+  }
   /* LG: Projects */
   .project-section {
     column-gap: 2rem;
