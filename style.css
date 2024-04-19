@@ -1139,7 +1139,7 @@ button:hover {
   /* Tablet: Footer Slider Form */
   .slider-form-wrapper {
     transform: translateX(-100%);
-    transition: transform 300ms ease-in-out;
+    transition: transform 400ms cubic-bezier(.44,1.04,.88,.86);
 
     position: fixed;
     right: 0;
@@ -1493,6 +1493,7 @@ button:hover {
     gap: .25em;
   }
   .portfolio .banner {
+    margin-top: 2rem;
     margin-bottom: var(--size-4);
     padding-top: var(--size-6);
   }
@@ -1940,7 +1941,7 @@ button:hover {
 
   /* Desktop: Portfolio */
   .portfolio .banner {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     margin-bottom: 3.5rem;
   }
   .banner-text {
