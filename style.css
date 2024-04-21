@@ -490,7 +490,7 @@ h6,
 }
 svg.squiggle {
   position: absolute;
-  top: 90%;
+  top: 100%;
   left: 72%;
   width: 32%;
   z-index: 1;
