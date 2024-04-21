@@ -971,6 +971,7 @@ summary::-webkit-details-marker {
   row-gap: var(--size-fluid-4);
   margin-bottom: var(--size-fluid-6);
   /* max-width: 500px; */
+  background-color: var(--cream);
 }
 .about-h1 {
   max-width: 500px;
@@ -1068,6 +1069,9 @@ button:hover {
 
 /* Large Mobile Devices */
 @media (min-width: 472px) {
+  html {
+    overflow-x: hidden;
+  }
   /* TODO: Check on mobile to see if making parallax frame position fixed instead of background-attachment fixed worked */
   .parallax-frame {
     position: relative;
@@ -1848,7 +1852,7 @@ button:hover {
   /* Desktop: Footer */
   .footer {
     padding: 6rem 4rem;
-    height: 100vh;
+    min-height: 100vh;
   }
   .footer-button-submit {
     width: 300px;
