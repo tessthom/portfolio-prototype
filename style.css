@@ -121,7 +121,7 @@ h6,
   gap: var(--size-3);
 }
 .main-section-vert-padding {
-  padding-top: var(--size-6);
+  padding-top: var(--size-4);
   padding-bottom: var(--size-6);
 }
 .scroller {
@@ -404,16 +404,17 @@ h6,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--size-7);
-  width: min(400px, 80%);
+  gap: 1.5rem;
+  width: min(400px, 90%);
   margin: 0 auto;
 }
 .home-h1 {
   text-align: left;
-  font-size: clamp(2.5rem, 14vw, 5.5rem);
+  font-size: clamp(2.5rem, 15vw, 5.5rem);
   font-weight: var(--font-weight-1);
-  line-height: var(--font-lineheight-00);
+  line-height: .9;
   letter-spacing: var(--font-letterspacing-0);
+  white-space: nowrap;
 }
 .perspective-container {
   display: inline-block;
@@ -489,9 +490,9 @@ h6,
 }
 svg.squiggle {
   position: absolute;
-  top: 100%;
-  left: 69%;
-  width: 34%;
+  top: 90%;
+  left: 72%;
+  width: 32%;
   z-index: 1;
 
   transition: all 1s ease-in-out;
