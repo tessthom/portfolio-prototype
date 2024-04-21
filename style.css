@@ -992,15 +992,22 @@ summary::-webkit-details-marker {
   padding-bottom: 100%;
   grid-column: span 12;
 }
-.parallax-frame {
-  position: relative;
+.overlay-inner {
+  width: 100%;
+  height: 100%;
   z-index: 0;
   background-image: url(./public/assets/sc-marsh.jpg);
-  /* background-attachment: fixed; */
-  position: fixed;
-  z-index: -1;
+  background-attachment: fixed;
+  z-index: 1;
   background-position: center;
   background-size: cover;
+}
+.parallax-frame {
+  position: relative;
+  min-width: calc(100vw - 2.5rem);
+  background-color: transparent;
+  grid-column: 1 / 12;
+  grid-row: 4 / 5;
 }
 .square-section-content {
   position: absolute;
@@ -1017,6 +1024,13 @@ summary::-webkit-details-marker {
 .about-one {
   background-color: var(--blue);
   color: var(--cream);
+  grid-row: 2 / 3;
+}
+.about-two {
+  grid-row: 3 / 4;
+}
+.about-three {
+  grid-row: 5 / 6;
 }
 .about-two,
 .about-three,
@@ -1027,10 +1041,11 @@ summary::-webkit-details-marker {
   font-size: 2.5rem;
   font-weight: var(--font-weight-1);
   text-transform: uppercase;
+  line-height: 0.9;
 }
 .square p {
   font-weight: var(--font-weight-1);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 .about-one a {
   color: var(--cream);
@@ -1075,9 +1090,13 @@ button:hover {
   /* TODO: Check on mobile to see if making parallax frame position fixed instead of background-attachment fixed worked */
   .parallax-frame {
     position: relative;
+    min-width: 100%;
+    grid-column: 2 / 11;
+  }
+  .overlay-inner {
+    position: relative;
     background-attachment: fixed;
   }
-
   .about-h2 {
     font-size: 2rem;
     line-height: 2rem;
@@ -1086,8 +1105,7 @@ button:hover {
     line-height: 1.35rem;
   }
   .about-one,
-  .about-three, 
-  .parallax-frame {
+  .about-three {
     grid-column: 1 / 10;
   }
 
