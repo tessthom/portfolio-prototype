@@ -121,7 +121,7 @@ h6,
   gap: var(--size-3);
 }
 .main-section-vert-padding {
-  padding-top: var(--size-4);
+  /* padding-top: var(--size-4); */
   padding-bottom: var(--size-6);
 }
 .scroller {
@@ -399,6 +399,8 @@ h6,
   grid-area: intro;
   text-align: center;
   padding: var(--size-4);
+  /* border: 1px solid red; */
+  max-height: calc(100vh - 10vh);
 }
 .intro-content-wrapper {
   display: flex;
@@ -730,7 +732,10 @@ summary::-webkit-details-marker {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(5%);
+  transform: rotate3d(-0.5, -1, 0.19, 45deg)
+    translateX(-10%)
+    translateY(-10%);
+  /* translateX(0%) */
 }
 .cube::after {
   content: '';
