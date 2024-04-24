@@ -377,7 +377,7 @@
     </main>
 
     <div class="slider-form-wrapper hide-on-mobile">
-      <form class="slider-form" action="#">
+      <form class="slider-form" name="contact" method="POST" netlify>
         <div class="slider-close-btn">
           <p>X</p>
         </div>
@@ -405,16 +405,14 @@
 
         <button
           class="slider-submit"
-          type="button"
-          onclick="alert(`Netlify form headless function coming soon!`)"
-        >
+          type="submit">
           Send Message
         </button>
       </form>
     </div>
 
     <footer class="footer main-section-vert-padding snapper">
-      <form class="contact-form" action="#">
+      <form class="contact-form" name="contact" method="POST" netlify>
         <h3 id="address">Let's work<br />together</h3>
 
         <label for="name" class="visually-hidden mobile">Name</label>
@@ -443,7 +441,7 @@
           class="mobile"
         ></textarea>
 
-        <button class="footer-button-submit" type="button">
+        <button class="footer-button-submit" type="submit">
           Contact
         </button>
       </form>

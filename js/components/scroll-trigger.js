@@ -44,24 +44,6 @@ scrollTrigger('.cube-container', {
 scrollTrigger('.cta-text', {
   rootMargin: '-25%'
 });
-// scrollTrigger('.projects-sticky-heading', {
-//   threshold: Array.from({length: 11}, (_, i) => i / 10),
-//   cb: (el, entry) => {
-//     el.style.opacity = entry.intersectionRatio;
-//   }
-// });
-
-// scrollTrigger('.projects-sticky-heading', {
-//   cb: (el, entry) => {
-//     let opacity;
-//     if (entry.boundingClientRect.y >= 0) {
-//       opacity = 1 - entry.intersectionRatio;
-//     } else {
-//       opacity = entry.intersectionRatio;
-//     }
-//     el.style.opacity = opacity;
-//   }
-// });
 
 /*
 The custom callback function in the scrollTrigger function can be used to perform any JavaScript operation when an element comes into view. Examples for future iterations:
