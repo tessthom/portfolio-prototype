@@ -1,5 +1,5 @@
 console.log('contact script is running');
-const openBtn = document.querySelector('.footer-button-submit');
+const openBtn = document.querySelector('.open-slider-form-btn');
 const introOpenBtn = document.querySelector('.intro-btn');
 const closeBtn = document.querySelector('.slider-close-btn');
 const submitBtn = document.querySelector('.slider-submit');

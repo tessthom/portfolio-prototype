@@ -753,6 +753,8 @@ summary::-webkit-details-marker {
   grid-template-areas: 'stack';
   justify-items: center;
   align-items: center;
+
+  overflow: hidden;
 }
 .cta-text {
   width: 100%;
@@ -1250,16 +1252,20 @@ button:hover {
     align-items: center;
   }
   .footer-button-submit,
-  .slider-submit {
+  .slider-submit,
+  .open-slider-form-btn {
     background-color: var(--cream);
     color: var(--blue);
     width: 250px;
     padding: 0.75em;
+    border: none;
     border-radius: 2em;
     font-size: 1.25rem;
     text-transform: uppercase;
+    cursor: pointer;
   }
-  .footer-button-submit:hover {
+  .footer-button-submit:hover,
+  .open-slider-form-btn:hover {
     font-weight: bold;
   }
   .contact-form h3 {
@@ -1272,6 +1278,7 @@ button:hover {
 
     margin-top: 0;
     flex-direction: column;
+    align-self: end;
   }
   .sitemap {
     order: 2;
@@ -1303,6 +1310,7 @@ button:hover {
     text-align: end;
     gap: 1rem;
     margin-top: 4rem;
+    margin-bottom: 4rem;
   }
   /* Tablet: Footer Slider Form */
   .slider-form-wrapper {
@@ -1942,6 +1950,9 @@ button:hover {
     padding: 0;
     padding-right: 0;
   }
+  .nav-item:last-child .nav-link {
+    padding-right: 0;
+  }
   .nav-link {
     width: auto;
   }
@@ -1997,7 +2008,7 @@ button:hover {
   }
   .intro {
     padding: 0;
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-bottom: 6rem;
   }
   .intro-content-wrapper {
@@ -2007,7 +2018,6 @@ button:hover {
     width: 100%;
     gap: 1.25rem;
 
-    /* TODO: ASSESS IF NEEDED */
     max-width: 1600px;
   }
   .intro .home-h1 {
@@ -2112,7 +2122,7 @@ button:hover {
   }
   .cube {
     transform-style: preserve-3d;
-    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-8%);
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-2%);
   }
   .face.back {
     transform: translateZ(-80px) rotateY(180deg);
