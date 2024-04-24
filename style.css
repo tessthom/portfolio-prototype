@@ -110,6 +110,9 @@ h6,
 /* p {
   text-wrap: balance;
 } */
+p {
+  margin-bottom: 0.5em;
+}
 
 /* Utility Classes */
 .grid {
@@ -147,6 +150,30 @@ h6,
   font-weight: 100;
   line-height: var(--font-lineheight-00);
   padding-top: 0.17em; /* TODO: FIGURE OUT HOW TO COMBAT FONT-BASED VERTICAL CENTERING ISSUES WHEN THE FONT'S ASCENDERS SCREW UP HOW THE TEXT'S CONTENT-AREA SITS IN THE VIRTUAL (i.e., LINE-HEIGHT) AREA. Possible w/ current CSS? */
+}
+.logo:hover {
+  background: radial-gradient(circle, var(--red), var(--red-4));
+  /* background: linear-gradient(to left, var(--red), var(--red-2)); */
+  background: radial-gradient(#A93535 7%, #D74B4B 17%, #FC9E48 34%, #F2D53C 46%, #4C976A 60%, #5155B6 85%, #7F55A1 94%);
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 15s ease infinite;
+  background-size: 200% 200%;
+  transition: transform 100ms ease;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.logo:active {
+  transform: translateY(4px);
 }
 .logo,
 .nav-link {
@@ -227,12 +254,7 @@ h6,
     (var(--menu-btn-width) * var(--sqrt2) - var(--menu-btn-width)) / 2
   );
   cursor: pointer;
-  transition: font-weight 200ms ease, font-style 200ms ease;
-}
-.nav-link:active,
-.nav-link:hover {
-  font-weight: var(--font-weight-6);
-  font-style: italic;
+  /* transition: font-weight 200ms ease, font-style 200ms ease; */
 }
 
 /* Slider Form */
@@ -408,8 +430,8 @@ h6,
   position: relative;
   overflow: hidden;
 
-  padding: .75rem;
-  padding-right: .6rem;
+  padding: 0.75rem;
+  padding-right: 0.6rem;
   padding-bottom: 0;
   border: none;
   border-top-left-radius: 10%;
@@ -437,7 +459,7 @@ h6,
   opacity: 0;
 }
 .blog-btn:hover {
-  padding-bottom: .75rem;
+  padding-bottom: 0.75rem;
   opacity: 1;
 }
 .blog-btn:hover .blog-btn-label {
@@ -479,7 +501,7 @@ h6,
   text-align: left;
   font-size: clamp(2.5rem, 15vw, 5.5rem);
   font-weight: var(--font-weight-1);
-  line-height: .85;
+  line-height: 0.85;
   letter-spacing: var(--font-letterspacing-0);
   white-space: nowrap;
 }
@@ -491,14 +513,13 @@ h6,
 .swing-container {
   display: inline-block;
   position: relative;
-  line-height: .6;
+  line-height: 0.6;
   transform-style: preserve-3d;
   transform-origin: bottom;
   /* animation: 1200ms cubic-bezier(0.82, 0, 0.18, 1) swing  */
   /* animation: 1000ms ease-in swing-down, 1000ms ease-out 1200ms swing-up; */
-  animation: 
-    800ms cubic-bezier(.85,.02,.95,.25) 1s swing-down,
-    900ms cubic-bezier(.19,.85,.3,1) 1800ms swing-up;
+  animation: 800ms cubic-bezier(0.85, 0.02, 0.95, 0.25) 1s swing-down,
+    900ms cubic-bezier(0.19, 0.85, 0.3, 1) 1800ms swing-up;
 }
 .swinger-back {
   position: absolute;
@@ -519,12 +540,12 @@ h6,
     transform: rotateX(0deg);
   }
   100% {
-    transform: rotateX(-.5turn);
+    transform: rotateX(-0.5turn);
   }
 }
 @keyframes swing-up {
   0% {
-    transform: rotateX(-.5turn);
+    transform: rotateX(-0.5turn);
   }
   100% {
     transform: rotateX(-1turn);
@@ -533,21 +554,24 @@ h6,
 .headshot {
   width: min(90%, 400px);
   border-radius: 50%;
-  margin: 0.5rem auto 0;
+  margin: 0 auto;
 }
 .intro-text {
   text-transform: uppercase;
   font-size: var(--font-size-2);
   line-height: 1.35rem;
 }
-.intro-heading-svg-wrapper {
+.intro-heading-svg-wrapper,
+.headshot-wrapper {
   position: relative;
 }
 svg.squiggle {
   position: absolute;
-  top: 90%;
+  /* top: 90%;
   left: 75%;
-  width: 32%;
+  width: 32%; */
+  top: -7%;
+  right: -7%;
   z-index: 1;
 
   transition: all 1s ease-in-out;
@@ -601,10 +625,10 @@ svg.squiggle path {
     opacity: 1;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 .project-card {
@@ -788,9 +812,7 @@ summary::-webkit-details-marker {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotate3d(-0.5, -1, 0.19, 45deg)
-    translateX(-10%)
-    translateY(-10%);
+  transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-10%) translateY(-10%);
   /* translateX(0%) */
 }
 .cube::after {
@@ -925,10 +947,13 @@ summary::-webkit-details-marker {
   flex-direction: column;
   gap: 2rem;
 }
-.project-summary-container, .project-link-container, .project-toolbox-container, .project-lessons-container {
+.project-summary-container,
+.project-link-container,
+.project-toolbox-container,
+.project-lessons-container {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 .project-heading-container {
   grid-column: 1 / 8;
@@ -980,7 +1005,7 @@ summary::-webkit-details-marker {
 }
 .project-link-item-container {
   display: flex;
-  gap: .25em;
+  gap: 0.25em;
   align-items: center;
 }
 .new-window-icon-container {
@@ -998,7 +1023,7 @@ summary::-webkit-details-marker {
 .project-link-item {
   display: flex;
   align-items: center;
-  gap: .25em;
+  gap: 0.25em;
 
   text-decoration: none;
   font-size: var(--font-size-3);
@@ -1142,8 +1167,11 @@ button:hover {
 }
 .embed-container {
   width: 100%;
+  max-width: 1000px;
   height: 80dvh;
   margin-bottom: var(--size-8);
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: var(--shadow-2);
 }
 .resume-embed {
@@ -1212,7 +1240,6 @@ button:hover {
   }
   .logo {
     font-size: 2.5rem;
-    transition: font-style 200ms ease;
   }
   .nav-bar {
     padding-left: 0;
@@ -1231,6 +1258,24 @@ button:hover {
   }
   .nav-item {
     padding-right: 0;
+  }
+  .nav-link, button {
+    transition: transform 100ms ease;
+  }
+  .nav-link:active, button:active {
+    transform: translateY(4px);
+  }
+  .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width 300ms ease;
+  }
+  .nav-link:active::after,
+  .nav-link:hover::after {
+    width: 100%;
   }
 
   /* Tablet: Footer */
@@ -1315,7 +1360,7 @@ button:hover {
   /* Tablet: Footer Slider Form */
   .slider-form-wrapper {
     transform: translateX(-100%);
-    transition: transform 400ms cubic-bezier(.44,1.04,.88,.86);
+    transition: transform 400ms cubic-bezier(0.44, 1.04, 0.88, 0.86);
 
     position: fixed;
     right: 0;
@@ -1347,6 +1392,9 @@ button:hover {
     height: 4rem;
     border: 2px solid var(--cream);
     border-radius: 50%;
+  }
+  .slider-close-btn p {
+    margin-bottom: 0;
   }
   .slider-close-btn:hover,
   .slider-submit:hover {
@@ -1429,12 +1477,16 @@ button:hover {
   .headshot-wrapper {
     grid-column: 6 / 13;
     grid-row: 2 / 7;
-    align-self: end;
+    align-self: center;
     margin-top: 1.5rem;
   }
   .headshot {
-    width: max(75%, 280px);
+    width: max(80%, 300px);
+    margin-top: 2rem;
+    margin-right: 0;
     /* margin: 0vh 0 0 auto; */
+
+    position: relative;
   }
   .intro-text {
     grid-column: 1 / 7;
@@ -1442,8 +1494,9 @@ button:hover {
     justify-self: start;
     align-self: center;
 
-    margin-left: 4rem;
-    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 2rem;
 
     text-align: left;
     font-size: 1.35rem;
@@ -1451,15 +1504,17 @@ button:hover {
     /* text-transform: none; */
   }
   svg.squiggle {
-    top: 120%;
-    left: 112%;
-    width: 50%;
+    /* top: 120%; */
+    /* left: 112%; */
+    top: -10%;
+    left: 10%;
+    width: 33%;
     height: auto;
-    transform: rotate(-75deg);
+    transform: rotate(-65deg);
   }
   .intro-btn {
-    margin-top: 1.75em;
-    padding: .75em 2em;
+    margin-top: 1.5em;
+    padding: 0.75em 2em;
     text-transform: uppercase;
     border: none;
     border-radius: 2em;
@@ -1483,7 +1538,7 @@ button:hover {
       position: absolute;
       inset: -4rem 0;
       max-width: 100vw;
-      margin: 0 auto;
+      margin: 5rem auto 0;
       overflow: hidden;
       background-color: var(--blue);
     }
@@ -1666,7 +1721,7 @@ button:hover {
   .project-link-item {
     display: flex;
     align-items: center;
-    gap: .25em;
+    gap: 0.25em;
   }
   .portfolio .banner {
     margin-top: 2rem;
@@ -1693,7 +1748,7 @@ button:hover {
   .project-summary-container {
     grid-column: 1 / 6;
     grid-row: 2 / 3;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -1828,7 +1883,23 @@ button:hover {
   }
 }
 
+@media (min-width: 730px) {
+  /* Home Intro SVG Tweak */
+  svg.squiggle {
+    top: 0;
+    width: 35%;
+  }
+}
+
 @media (min-width: 750px) {
+  /* Home Intro SVG */
+  svg.squiggle {
+    top: 8%;
+    left: 8%;
+    width: 8.5rem;
+    transform: rotateZ(-75deg);
+  }
+
   /* Cube CTA */
   .cube-container {
     margin-bottom: 5%;
@@ -1910,6 +1981,12 @@ button:hover {
   }
 }
 
+@media (min-width: 880px) {
+  svg.squiggle {
+    top: 15%;
+  }
+}
+
 /* Desktop Styles */
 @media (min-width: 1000px) {
   .mobile {
@@ -1927,11 +2004,6 @@ button:hover {
   .logo {
     font-size: 3rem;
     /* TODO: Sort out different style to transition. New font family? Need something with incremental change ability in order for transition to take effect. */
-  }
-  .logo:active,
-  .logo:hover {
-    font-weight: var(--font-weight-6);
-    font-style: italic;
   }
   .menu-button {
     display: none;
@@ -2022,7 +2094,7 @@ button:hover {
   }
   .intro .home-h1 {
     font-size: min(7.25rem, 10vw);
-    line-height: max(6rem, 8vw);
+    line-height: 6rem;
   }
   .intro-heading-svg-wrapper {
     grid-column: 1 / 7;
@@ -2040,14 +2112,17 @@ button:hover {
   .intro-text {
     grid-column: 1 / 7;
     grid-row: 2 / 3;
-    padding-top: 1rem;  
+    /* padding-top: 1rem; */
     font-size: 1.35rem;
-    line-height: 2.25rem;
+    line-height: 2rem;
   }
   svg.squiggle {
-    top: min(120%, 250px);
-    left: min(115%, 40vw);
-    width: min(250px, 35%);
+    /* top: min(120%, 250px); */
+    /* left: min(115%, 40vw); */
+    /* width: min(250px, 35%); */
+    top: 10%;
+    left: -5%;
+    width: 9.5rem;
     transform: rotate(-75deg);
   }
   .headshot {
@@ -2197,10 +2272,10 @@ button:hover {
     grid-column: 1 / 13;
     grid-row: 6 / 7;
   }
-  .project-summary-container,     
-  .project-toolbox-container, 
-  .project-link-container, 
-  .project-one .project-link-container, 
+  .project-summary-container,
+  .project-toolbox-container,
+  .project-link-container,
+  .project-one .project-link-container,
   .project-lessons-container {
     flex-direction: row;
     gap: 1.5rem;
@@ -2222,12 +2297,12 @@ button:hover {
   .project-takeaways-h3 {
     min-width: 17%;
   }
-  .project-summary-container p,     
-  .project-toolbox-container p, 
-  .project-link-container p, 
-  .project-one .project-link-container p, 
+  .project-summary-container p,
+  .project-toolbox-container p,
+  .project-link-container p,
+  .project-one .project-link-container p,
   .project-lessons-container p {
-    padding-top: .25em;
+    padding-top: 0.25em;
   }
   .project-link-item-container {
     align-items: center;
@@ -2253,9 +2328,10 @@ button:hover {
     padding-top: 0;
 
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
   }
-  .project-two .project-summary-h3, .project-two .project-summary {
+  .project-two .project-summary-h3,
+  .project-two .project-summary {
     width: 100%;
     text-align: start;
   }
@@ -2265,7 +2341,7 @@ button:hover {
     padding-top: 0;
 
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
   }
   .project-two .project-link-container {
     grid-column: 7 / 13;
@@ -2276,9 +2352,10 @@ button:hover {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: .5rem;
+    gap: 0.5rem;
   }
-  .project-two .project-link-container .project-h3, .project-two .project-link-item-container {
+  .project-two .project-link-container .project-h3,
+  .project-two .project-link-item-container {
     align-self: start;
     text-align: start;
   }
@@ -2293,7 +2370,7 @@ button:hover {
 
     flex-direction: column;
     align-items: start;
-    gap: .5rem;
+    gap: 0.5rem;
   }
   .project-two .project-h3 {
     text-align: start;
@@ -2314,7 +2391,7 @@ button:hover {
     padding-top: 0;
     align-self: end;
   }
-  .project-three .project-summary-container, 
+  .project-three .project-summary-container,
   .project-three .project-toolbox-container,
   .project-three .project-link-container {
     grid-column: 1 / 7;
@@ -2323,7 +2400,7 @@ button:hover {
     grid-row: 4 / 5;
     padding-top: 0;
   }
-  .project-three .project-summary-h3, 
+  .project-three .project-summary-h3,
   .project-three .project-toolbox-h3 {
     text-align: end;
   }
@@ -2356,8 +2433,8 @@ button:hover {
   }
   .about p {
     font-weight: 300;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.15rem;
+    line-height: 1.5rem;
   }
   .about-one {
     grid-column: 7 / 13;
@@ -2391,23 +2468,41 @@ button:hover {
     background-color: var(--blue);
     color: var(--cream);
   }
+
+  /* LG: Resume */
+  .resume {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .resume h1 {
+    text-align: center;
+  }
 }
 
 @media (min-width: 1200px) {
+  /* LG: Home - Intro SVG */
+  svg.squiggle {
+    width: 170px;
+    top: 5%;
+    left: 5%;
+  }
+
   /* LG: Home - Cube CTA */
   .cube {
-    width: 12rem;
-    height: 12rem;
-    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-4%);
+    width: 11rem;
+    height: 11rem;
+    transform: rotate3d(-0.5, -1, 0.16, 45deg) translateX(-10%);
   }
   .face.front {
-    transform: translateZ(6rem);
+    transform: translateZ(5.5rem);
+    border: 1px solid transparent;
   }
   /* LG: Projects */
   .project-section {
     column-gap: 2rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
   .project-one .project-img-main-container,
   .project-three .project-img-main-container {
@@ -2432,15 +2527,11 @@ button:hover {
   .about h2 {
     font-size: 2.75rem;
   }
-  .about p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
   .about h1 {
     grid-column: 1 / 5;
   }
   .about-one {
-    grid-column: 5 / 9;
+    grid-column: 9 / 13;
   }
   .about-two {
     grid-column: 5 / 9;
@@ -2451,9 +2542,159 @@ button:hover {
   }
   .about-four {
     grid-column: 9 / 13;
+    grid-row: 3 / 4;
   }
   .parallax-frame {
     grid-column: 9 / 13;
+  }
+}
+
+@media (min-width: 1400px) {
+  .intro {
+    margin-bottom: 0;
+    /* border: 1px solid yellowgreen; */
+    /* max-width: 1600px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .intro-heading-svg-wrapper {
+    margin-bottom: -3rem;
+  }
+  .intro-text {
+    max-width: 550px;
+    /* margin-left: 4rem; */
+    margin-left: auto;
+    /* border: 1px solid deeppink; */
+  }
+  .headshot {
+    max-width: 500px;
+    /* margin-right: auto; */
+  }
+  svg.squiggle {
+    top: 0;
+    left: 0;
+  }
+  .home-projects {
+    padding: 40vh 1rem;
+    margin-bottom: 0;
+
+    &::after {
+      inset: -4rem -20%;
+      margin: 30vh auto 0;
+    }
+  }
+  /* Portfolio */
+  .banner {
+    display: none;
+  }
+  .project-one .project-heading-container,
+  .project-two .project-heading-container,
+  .project-three .project-heading-container {
+    grid-column: 2 / 7;
+  }
+  .project-one .project-lessons-container {
+    grid-column: 8 / 12;
+    grid-row: 5 / 7;
+    flex-direction: column;
+    padding-top: 0;
+    margin-left: 2rem;
+  }
+  .project-one .project-summary-container,
+  .project-one .project-toolbox-container,
+  .project-one .project-link-container,
+  .project-three .project-summary-container {
+    grid-column: 2 / 7;
+  }
+  .project-one .project-img-secondary-container {
+    grid-column: 2 / 8;
+    grid-row: 5 / 7;
+    margin-top: 2rem;
+  }
+  .project-one .project-takeaways-h3 {
+    margin-top: 2rem;
+  }
+  .project-one .project-img-main,
+  .project-three .project-img-main,
+  .project-three .project-img-secondary {
+    min-width: 0;
+    max-width: 500px;
+  }
+  .project-one .project-img-secondary,
+  .project-two .project-img-main,
+  .project-two .project-img-secondary {
+    min-width: 0;
+    width: 100%;
+    max-width: 800px;
+  }
+  .project-two .project-heading-container {
+    grid-column: 2 / 6;
+  }
+  .project-two .project-img-main-container {
+    grid-column: 6 / 12;
+    grid-row: 1 / 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .project-two .project-summary-container {
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
+    margin-left: 4rem;
+  }
+  .project-two .project-img-secondary-container {
+    grid-column: 2 / 8;
+    grid-row: 3 / 6;
+    margin-top: 2rem;
+  }
+  .project-two .project-toolbox-container,
+  .project-two .project-link-container {
+    grid-column: 8 / 12;
+  }
+  .project-two .project-toolbox-container {
+    grid-row: 3 / 4;
+    margin-top: 2rem;
+    padding-bottom: 0;
+  }
+  .project-two .project-link-container {
+    grid-row: 4 / 5;
+  }
+  .project-two .project-lessons-container {
+    grid-column: 8 / 12;
+    grid-row: 5 / 6;
+  }
+  .project-three .project-heading-container {
+    grid-column: 2 / 7;
+  }
+  .project-three .project-img-main-container {
+    grid-column: 7 / 12;
+    grid-row: 1 / 5;
+  }
+  .project-three .h2-line-center {
+    margin-right: 0;
+    margin-left: 10%;
+  }
+  .project-three .h2-line-right {
+    margin-right: 20%;
+  }
+  .project-three .project-summary-container {
+    grid-row: 2 / 3;
+  }
+  .project-three .project-toolbox-container,
+  .project-three .project-link-container {
+    grid-column: 2 / 7;
+  }
+  .project-three .project-img-secondary-container {
+    grid-column: 2 / 7;
+    margin-top: 2rem;
+    padding-top: 0;
+    margin-left: auto;
+  }
+  .project-three .project-lessons-container {
+    grid-column: 7 / 10;
+    margin-top: 2rem;
+    padding-top: 0;
+  }
+  .project-three .project-lessons-container .project-h3 {
+    text-align: start;
   }
 }
 
@@ -2483,25 +2724,14 @@ button:hover {
   /* XL: Home */
   .intro-text {
     align-self: center;
-    margin-right: 15%;
+    /* margin-right: 15%; */
     margin-bottom: 10%;
-  }
-  svg.squiggle {
-    top: 120%;
-    left: 83%;
-    width: 30%;
   }
   .headshot {
     max-width: 550px;
   }
-  .cube-container {
-    width: 250px;
-    height: 250px;
-    top: 35%;
-    left: 37%;
-  }
-  .face.front {
-    transform: translateZ(100px);
+  .details-wrapper {
+    grid-column: 4 / 12;
   }
 
   /* Fills in sides of blue background sections after the XL content width constraint creates gaps */
@@ -2525,8 +2755,15 @@ button:hover {
     height: 100%;
     z-index: -1;
   }
+  .projects-sticky-heading {
+    opacity: 0.75;
+  }
 
   /* XL: About */
+  .about h2 {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
   .about p {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -2541,7 +2778,7 @@ button:hover {
     grid-column: 5 / 9;
   }
   .about-four {
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
   }
 }
 
