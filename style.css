@@ -1606,7 +1606,7 @@ button:hover {
 
   /* Tablet: Home - Projects */
   .home-projects {
-    padding: 6rem 1rem;
+    padding: 4rem 1rem 6rem;
     margin-bottom: 0;
 
     &::after {
