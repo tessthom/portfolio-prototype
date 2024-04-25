@@ -790,10 +790,19 @@ summary::-webkit-details-marker {
 
   overflow: hidden;
 }
+.cta-link {
+  display: block;
+  grid-area: stack;
+  border-radius: 50%;
+  width: 100%;
+  /* width: min-content; */
+  cursor: pointer;
+  clip-path: circle(50%);
+}
 .cta-text {
   width: 100%;
   height: 100%;
-
+  border-radius: 50%;
   grid-area: stack;
 }
 .cta-text.active {
@@ -1161,6 +1170,56 @@ button:hover {
   cursor: pointer;
 }
 
+/* Analog Work */
+.analog .overlay-inner {
+  background-image: url(./public/assets/shopSelfie.JPG);
+}
+.analog .square {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+.analog .square.one {
+  background-image: url(./public/assets/diebenkorn-stairs-dwell.jpeg);
+  background-position: right;
+}
+.analog .square.two {
+  background-image: url(./public/assets/chairs-thos-moser.jpg);
+  background-position: center;
+}
+.analog .square.three {
+  background-image: url(./public/assets/canoe-shop.JPG);
+}
+.analog .square.four {
+  background-image: url(./public/assets/onegin-trees-citypaper.jpg);
+  background-position: 28% center;
+}
+.analog-link {
+  text-decoration: none;
+}
+.analog .square a:hover {
+  font-style: normal;
+}
+.analog .square-section-content {
+  color: transparent;
+  transition: all 300ms ease;
+}
+.analog .square:hover .square-section-content {
+  background-color:rgba(43, 42, 42, 0.75);
+  /* &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:rgba(43, 42, 42, 0.75);
+  } */
+}
+.analog .square:hover .square-section-content {
+  color: var(--cream);
+}
+
 /* Resume */
 .resume {
   padding: var(--size-4);
@@ -1231,6 +1290,11 @@ button:hover {
   .about-two,
   .about-four {
     grid-column: 4 / 13;
+  }
+
+  /* Analog */
+  .analog .parallax-frame {
+    background-image: url(./public/assets/wood-grain.jpg);
   }
 }
 
@@ -1706,12 +1770,18 @@ button:hover {
     margin-bottom: 6rem;
     padding: 0 3rem;
   }
+  .cta-link {
+    grid-column: 1 / 13;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .cta-wrapper {
     grid-column: 2 / 12;
   }
   .cube {
     transform-style: preserve-3d;
-    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-2%);
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(2%);
   }
   .face {
     outline: 1px solid transparent;
@@ -1736,6 +1806,9 @@ button:hover {
   }
 
   /* Tablet: Home - Values */
+  .values-outer {
+    display: none;
+  }
 
   /* Tablet: Portfolio */
   .project-link-item {
@@ -2217,12 +2290,8 @@ button:hover {
 
   /* Desktop: Home - CTA */
   .cta {
-    /* display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem; */
-
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
 
@@ -2230,9 +2299,12 @@ button:hover {
     margin-bottom: 6rem;
     padding: 0 4rem 0;
   }
+  .cta-link {
+    width: 45vw;
+  }
   .cta-wrapper {
-    grid-column: 1 / 8;
-    width: 50vw;
+    /* grid-column: 1 / 8; */
+    width: 45vw;
     max-width: 600px;
   }
   .cube-container {
@@ -2252,6 +2324,7 @@ button:hover {
   }
   .values-outer {
     /* border: 1px solid red; */
+    display: block;
     width: 50vw;
   }
   .values-inner {
@@ -2261,7 +2334,7 @@ button:hover {
   }
   .values-h3 {
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     font-size: 3rem;
     font-weight: 500;
     /* border-bottom: 4px solid var(--red); */
@@ -2269,7 +2342,10 @@ button:hover {
   .values-list {
     font-size: 1.5rem;
     margin-top: .5em;
-    margin-left: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 1rem; */
+    /* border: 1px solid green; */
   }
   .values-item {
     margin-bottom: 0.75em;
@@ -2678,7 +2754,7 @@ button:hover {
 
 @media (min-width: 1400px) {
   .intro {
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
     /* border: 1px solid yellowgreen; */
     /* max-width: 1600px; */
     margin-left: auto;
@@ -2702,12 +2778,12 @@ button:hover {
     left: 0;
   }
   .home-projects {
-    padding: 40vh 1rem;
+    /* padding: 40vh 1rem; */
     margin-bottom: 0;
 
     &::after {
-      inset: -4rem -20%;
-      margin: 30vh auto 0;
+      inset: 0 -20%;
+      /* margin: 30vh auto 0; */
     }
   }
   /* Portfolio */
