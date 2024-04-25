@@ -39,7 +39,7 @@ Vite's dev server is awesome. I think I'll stick to it for the second iteration 
 - [ ] 2 more portfolio pieces (BarKey, new CRUD ops app)
 - [ ] Reformulate size/type system (maybe replace Open Props `--size-n` properties)
 - [x] FIX: Dropdown nav menu not at full width due to body constraint for midterm submission.
-- [ ] FIX: Swap Tops'l images index.html#projects vs `portfolio.html`.
+- [x] FIX: Swap Tops'l images index.html#projects vs `portfolio.html`.
 - [ ] FIX: Resume overflow from PDF embed on true mobile devices.
 - [x] Rework projects page layout for mobile.
 - [x] Wire up form.
