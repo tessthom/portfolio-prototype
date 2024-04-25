@@ -2094,7 +2094,7 @@ button:hover {
   /* Desktop: Home */
   .home {
     column-gap: 1.25rem; /* 20px gutter */
-    row-gap: 8rem;
+    row-gap: 0rem;
     /* padding-left: 4rem; */
     /* padding-right: 4rem; */
   }
@@ -2151,6 +2151,13 @@ button:hover {
   }
 
   /* Desktop: Home - Projects */
+  .home-projects {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .home-projects::after {
+    inset: 0;
+  }
   .projects-sticky-heading {
     font-size: 15vw;
     /* line-height: 10vw; */
@@ -2182,8 +2189,6 @@ button:hover {
 
   /* Desktop: Home - Accordion */
   .accordion {
-    padding-bottom: 0;
-
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
