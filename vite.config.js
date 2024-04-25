@@ -6,7 +6,8 @@ export default {
         main: 'index.html',
         portfolio: 'pages/portfolio.html',
         contact: 'pages/about.html',
-        resume: 'pages/resume.html'
+        resume: 'pages/resume.html',
+        analog: 'pages/analog-work.html'
       }
     },
     define: {
