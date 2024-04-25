@@ -151,7 +151,15 @@ h6,
 .logo:hover {
   background: radial-gradient(circle, var(--red), var(--red-4));
   /* background: linear-gradient(to left, var(--red), var(--red-2)); */
-  background: radial-gradient(#A93535 7%, #D74B4B 17%, #FC9E48 34%, #F2D53C 46%, #4C976A 60%, #5155B6 85%, #7F55A1 94%);
+  background: radial-gradient(
+    #a93535 7%,
+    #d74b4b 17%,
+    #fc9e48 34%,
+    #f2d53c 46%,
+    #4c976a 60%,
+    #5155b6 85%,
+    #7f55a1 94%
+  );
   background-clip: text;
   color: transparent;
   animation: shimmer 15s ease infinite;
@@ -1261,10 +1269,12 @@ button:hover {
   .nav-item {
     padding-right: 0;
   }
-  .nav-link, button {
+  .nav-link,
+  button {
     transition: transform 100ms ease;
   }
-  .nav-link:active, button:active {
+  .nav-link:active,
+  button:active {
     transform: translateY(4px);
   }
   .nav-link::after {
@@ -2155,21 +2165,25 @@ button:hover {
     margin-right: 4rem;
   }
   .project-card.one {
-    width: 450px;
+    width: 40%;
   }
   .project-card.two {
-    width: 650px;
+    width: 55%;
   }
   .project-card.three {
-    margin-top: -9rem;
+    width: 40%;
+    /* margin-top: -4rem; */
   }
   .project-card.four {
-    width: 500px;
-    right: 5%;
+    width: 35%;
+    right: 0;
+    top: 15%;
   }
 
   /* Desktop: Home - Accordion */
   .accordion {
+    padding-bottom: 0;
+
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
@@ -2198,26 +2212,100 @@ button:hover {
 
   /* Desktop: Home - CTA */
   .cta {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
+    gap: 1rem; */
 
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
     margin-bottom: 6rem;
-    padding: 0;
+    padding: 0 4rem 0;
   }
   .cta-wrapper {
     grid-column: 1 / 8;
-    max-width: 650px;
+    width: 50vw;
+    max-width: 600px;
   }
   .cube-container {
     margin-bottom: 10%;
   }
   .cube {
     transform-style: preserve-3d;
-    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-2%);
+    transform: rotate3d(-0.5, -1, 0.19, 45deg) translateX(-5%);
   }
   .face.back {
     transform: translateZ(-80px) rotateY(180deg);
+  }
+
+  /* Desktop: Home - Values */
+  .cta-text {
+    max-width: 500px;
+  }
+  .values-outer {
+    /* border: 1px solid red; */
+    width: 50vw;
+  }
+  .values-inner {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .values-h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    /* border-bottom: 4px solid var(--red); */
+  }
+  .values-list {
+    font-size: 1.5rem;
+    margin-top: .5em;
+    margin-left: 2rem;
+  }
+  .values-item {
+    margin-bottom: 0.75em;
+    display: flex;
+    justify-content: start;
+
+    position: relative;
+  }
+  .bullet {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.15em;
+    border: 3px solid var(--red);
+    background-color: var(--cream);
+    position: relative;
+    z-index: 99;
+    overflow-x: visible;
+    transition: all 200ms ease;
+  }
+  .check {
+    position: absolute;
+    top: -1.65rem;
+    left: -0.15em;
+    width: 1.55rem;
+    z-index: 99;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 200%;
+    transition: all 400ms ease;
+  }
+  .item-text {
+    display: inline-block;
+    width: calc(100% - 4.5rem);
+    margin-left: 0.5rem;
+    align-self: start;
+  }
+  .values-item:hover .check {
+    stroke-dashoffset: 0;
+  }
+  .value-item:hover .bullet {
+    background-color: rgba(215, 72, 75, 0.75);
   }
 
   /* Desktop: Portfolio */
@@ -2505,14 +2593,31 @@ button:hover {
     left: 5%;
   }
 
+  /* LG: Home - FAQ */
+  .accordion h2 {
+    grid-column: 3 / 11;
+    letter-spacing: -.06em;
+    text-align: center;
+    max-width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: nowrap;
+  }
+  .details-wrapper {
+    grid-column: 3 / 11;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* LG: Home - Cube CTA */
   .cube {
-    width: 11rem;
-    height: 11rem;
-    transform: rotate3d(-0.5, -1, 0.16, 45deg) translateX(-10%);
+    width: 9rem;
+    height: 9rem;
+    transform: rotate3d(-0.5, -1, 0.2, 45deg) translateX(3%);
   }
   .face.front {
-    transform: translateZ(5.5rem);
+    transform: translateZ(4.5rem);
     border: 1px solid transparent;
   }
   /* LG: Projects */
