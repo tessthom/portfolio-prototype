@@ -354,10 +354,11 @@ h6,
   justify-content: end;
   align-items: center;
 }
-.phone-icon {
+.phone-icon, .shrimp-icon {
   width: 1.5em;
   height: auto;
-  display: inline-block;
+  display: block;
+  fill: var(--cream);
 }
 .footer-address-section a {
   display: inline-block;
